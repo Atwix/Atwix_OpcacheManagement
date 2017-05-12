@@ -7,6 +7,13 @@
 -->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
     <menu>
-        <add id="Magento_Indexer::system_index" title="Index Management" translate="title" module="Magento_Indexer" sortOrder="30" parent="Magento_Backend::system_tools" action="indexer/indexer/list" resource="Magento_Indexer::index"/>
+        <add id="Glushko_OpCacheManagement::opcache_management"
+             title="OpCahce Management"
+             translate="title"
+             module="Glushko_OpCacheManagement"
+             sortOrder="30"
+             parent="Magento_Backend::system_tools"
+             action="glushko_opcache/management/index"
+             resource="Glushko_OpCacheManagement::index" />
     </menu>
 </config>
