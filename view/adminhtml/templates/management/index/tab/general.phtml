@@ -1,0 +1,63 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: weysman
+ * Date: 5/12/17
+ * Time: 11:25 PM
+ */
+/** @var Glushko\OpCacheManagement\Block\Adminhtml\Management\Index\Tab\General $block */
+
+$config = $block->getConfiguration();
+?>
+
+<div class="fieldset-wrapper customer-information">
+    <div class="fieldset-wrapper-title">
+        <span class="title"><?php echo __('General Information') ?></span>
+    </div>
+    <table class="admin__table-secondary">
+        <tbody>
+            <tr>
+                <th><?php  echo __('PHP Version') ?></th>
+                <td>1</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="fieldset-wrapper customer-information">
+    <div class="fieldset-wrapper-title">
+        <span class="title"><?php echo __('OpCache Infromation') ?></span>
+    </div>
+    <table class="admin__table-secondary">
+        <tbody>
+            <tr>
+                <th><?php  echo __('Version') ?></th>
+                <td>1</td>
+            </tr>
+            <tr>
+                <th><?php  echo __('Opcode Caching') ?></th>
+                <td>1</td>
+            </tr>
+            <tr>
+                <th><?php  echo __('Optimization') ?></th>
+                <td>1</td>
+            </tr>
+            <tr>
+                <th><?php  echo __('Startup') ?></th>
+                <td>1</td>
+            </tr>
+            <tr>
+                <th><?php  echo __('Shared Memory Model') ?></th>
+                <td>1</td>
+            </tr>
+            <tr>
+                <th><?php  echo __('Uptime') ?></th>
+                <td>1</td>
+            </tr>
+            <tr>
+                <th><?php  echo __('Last restart') ?></th>
+                <td>1</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
