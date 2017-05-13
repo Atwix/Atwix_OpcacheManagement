@@ -68,4 +68,20 @@ class OpcacheWrapper implements OpcacheInterface
     {
         return extension_loaded('Zend OPcache') && (ini_get('opcache.enable') || ini_get('opcache.enable_cli'));
     }
+
+    /**
+     * @inheritdoc
+     */
+    public function isInvalidationAvailable()
+    {
+        return function_exists('opcache_invalidate');
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function isCompilationAvailable()
+    {
+        return function_exists('opcache_compile_file');
+    }
 }

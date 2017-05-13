@@ -21,6 +21,10 @@ interface OpcacheInterface
     public function compile($filePath);
 
     /**
+     * This method invalidates a particular script from the opcode cache.
+     * If force is unset or FALSE,
+     * the script will only be invalidated if the modification time of the script is newer than the cached opcodes.
+     *
      * @param string $filePath
      * @param bool $isForce
      *
@@ -29,6 +33,9 @@ interface OpcacheInterface
     public function invalidate($filePath, $isForce = false);
 
     /**
+     * This method resets the entire opcode cache.
+     * After calling, all scripts will be reloaded and reparsed the next time they are hit.
+     *
      * @return bool
      */
     public function reset();
@@ -51,7 +58,23 @@ interface OpcacheInterface
     public function isCached($filePath);
 
     /**
+     * Check if Zend OPcache is enabled
+     *
      * @return bool
      */
     public function isEnabled();
+
+    /**
+     * Check if the current version of Opcache supports invalidation of compiled files
+     *
+     * @return bool
+     */
+    public function isInvalidationAvailable();
+
+    /**
+     * Check if compilation is available for this version of Opcache
+     *
+     * @return mixed
+     */
+    public function isCompilationAvailable();
 }

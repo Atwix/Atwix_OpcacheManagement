@@ -96,6 +96,9 @@ class General extends BackendTemplate implements TabWidgetInterface
         return $this->getOpcacheVersion->getOpcacheProductName() . ' ' . $this->getOpcacheVersion->getOpcacheVersion();
     }
 
+    /**
+     * @return string
+     */
     public function getUptime()
     {
         $statistics = $this->getOpcacheStatus->getStatistics();
@@ -103,6 +106,9 @@ class General extends BackendTemplate implements TabWidgetInterface
         return $statistics['start_time'];
     }
 
+    /**
+     * @return string
+     */
     public function getLastRestart()
     {
         $statistics = $this->getOpcacheStatus->getStatistics();
