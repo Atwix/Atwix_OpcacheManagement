@@ -4,7 +4,7 @@
  * See COPYING.txt for license details.
  */
 
-namespace Glushko\OpCacheManagement\Block\Adminhtml\Management\Index;
+namespace Glushko\OpcacheManagement\Block\Adminhtml\Management\Index;
 
 use Magento\Backend\Block\Widget\Tabs as TabsWidget;
 

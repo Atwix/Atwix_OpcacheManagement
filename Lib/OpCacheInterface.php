@@ -6,12 +6,12 @@
  * Time: 9:47 PM
  */
 
-namespace Glushko\OpCacheManagement\Lib;
+namespace Glushko\OpcacheManagement\Lib;
 
 /**
- * Interface OpCacheInterface
+ * Interface OpcacheInterface
  */
-interface OpCacheInterface
+interface OpcacheInterface
 {
     /**
      * @param $filePath

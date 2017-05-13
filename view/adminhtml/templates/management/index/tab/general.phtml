@@ -5,9 +5,7 @@
  * Date: 5/12/17
  * Time: 11:25 PM
  */
-/** @var Glushko\OpCacheManagement\Block\Adminhtml\Management\Index\Tab\General $block */
-
-$config = $block->getConfiguration();
+/** @var Glushko\OpcacheManagement\Block\Adminhtml\Management\Index\Tab\General $block */
 ?>
 
 <div class="fieldset-wrapper customer-information">
@@ -17,46 +15,16 @@ $config = $block->getConfiguration();
     <table class="admin__table-secondary">
         <tbody>
             <tr>
-                <th><?php  echo __('PHP Version') ?></th>
-                <td>1</td>
-            </tr>
-        </tbody>
-    </table>
-</div>
-
-<div class="fieldset-wrapper customer-information">
-    <div class="fieldset-wrapper-title">
-        <span class="title"><?php echo __('OpCache Infromation') ?></span>
-    </div>
-    <table class="admin__table-secondary">
-        <tbody>
-            <tr>
-                <th><?php  echo __('Version') ?></th>
-                <td>1</td>
-            </tr>
-            <tr>
-                <th><?php  echo __('Opcode Caching') ?></th>
-                <td>1</td>
-            </tr>
-            <tr>
-                <th><?php  echo __('Optimization') ?></th>
-                <td>1</td>
-            </tr>
-            <tr>
-                <th><?php  echo __('Startup') ?></th>
-                <td>1</td>
-            </tr>
-            <tr>
-                <th><?php  echo __('Shared Memory Model') ?></th>
-                <td>1</td>
+                <th><?php  echo __('Opcache Version') ?></th>
+                <td><?php echo $block->getOpcacheVersion(); ?></td>
             </tr>
             <tr>
                 <th><?php  echo __('Uptime') ?></th>
-                <td>1</td>
+                <td><?php echo $block->getUptime(); ?></td>
             </tr>
             <tr>
                 <th><?php  echo __('Last restart') ?></th>
-                <td>1</td>
+                <td><?php echo $block->getLastRestart(); ?></td>
             </tr>
         </tbody>
     </table>

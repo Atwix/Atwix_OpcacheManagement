@@ -6,7 +6,7 @@
  * Time: 10:46 PM
  */
 
-namespace Glushko\OpCacheManagement\Block\Adminhtml\Management;
+namespace Glushko\OpcacheManagement\Block\Adminhtml\Management;
 
 use Magento\Backend\Block\Widget\Form\Container as BackendFormContainer;
 
@@ -19,7 +19,7 @@ class Index extends BackendFormContainer
     {
         parent::_construct();
 
-        $this->_blockGroup = 'Glushko_OpCacheManagement';
+        $this->_blockGroup = 'Glushko_OpcacheManagement';
         $this->_controller = 'Adminhtml_Management';
         $this->_mode = 'index';
     }

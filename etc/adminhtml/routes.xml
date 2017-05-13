@@ -7,8 +7,8 @@
 -->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/routes.xsd">
     <router id="admin">
-        <route id="glushko_opcache" frontName="glushko_opcache">
-            <module name="Glushko_OpCacheManagement" before="Magento_Backend" />
+        <route id="glushko_Opcache" frontName="glushko_Opcache">
+            <module name="Glushko_OpcacheManagement" before="Magento_Backend" />
         </route>
     </router>
 </config>

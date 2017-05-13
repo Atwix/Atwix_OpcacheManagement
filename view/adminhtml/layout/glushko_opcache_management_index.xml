@@ -8,15 +8,15 @@
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="admin-2columns-left" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
         <referenceContainer name="left">
-            <block class="Glushko\OpCacheManagement\Block\Adminhtml\Management\Index\Tabs" name="theme_edit_tabs">
+            <block class="Glushko\OpcacheManagement\Block\Adminhtml\Management\Index\Tabs" name="theme_edit_tabs">
                 <action method="addTab">
                     <argument name="name" xsi:type="string">general_section</argument>
-                    <argument name="block" xsi:type="string">Glushko\OpCacheManagement\Block\Adminhtml\Management\Index\Tab\General</argument>
+                    <argument name="block" xsi:type="string">Glushko\OpcacheManagement\Block\Adminhtml\Management\Index\Tab\General</argument>
                 </action>
             </block>
         </referenceContainer>
         <referenceContainer name="content">
-            <block class="Glushko\OpCacheManagement\Block\Adminhtml\Management\Index" name="glushko.opcache_management.content"/>
+            <block class="Glushko\OpcacheManagement\Block\Adminhtml\Management\Index" name="glushko.Opcache_management.content"/>
         </referenceContainer>
     </body>
 </page>

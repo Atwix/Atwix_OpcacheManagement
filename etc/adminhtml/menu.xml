@@ -7,13 +7,13 @@
 -->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
     <menu>
-        <add id="Glushko_OpCacheManagement::opcache_management"
-             title="OpCache Management"
+        <add id="Glushko_OpcacheManagement::Opcache_management"
+             title="Opcache Management"
              translate="title"
-             module="Glushko_OpCacheManagement"
+             module="Glushko_OpcacheManagement"
              sortOrder="30"
              parent="Magento_Backend::system_tools"
-             action="glushko_opcache/management/index"
-             resource="Glushko_OpCacheManagement::index" />
+             action="glushko_Opcache/management/index"
+             resource="Glushko_OpcacheManagement::index" />
     </menu>
 </config>

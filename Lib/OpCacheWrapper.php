@@ -6,19 +6,19 @@
  * Time: 9:47 PM
  */
 
-namespace Glushko\OpCacheManagement\Lib;
+namespace Glushko\OpcacheManagement\Lib;
 
 /**
- * Class OpCacheWrapper
+ * Class OpcacheWrapper
  */
-class OpCacheWrapper implements OpCacheInterface
+class OpcacheWrapper implements OpcacheInterface
 {
     /**
      * @inheritdoc
      */
     public function compile($filePath)
     {
-        return opcache_compile_file($filePath);
+        return Opcache_compile_file($filePath);
     }
 
     /**
@@ -26,7 +26,7 @@ class OpCacheWrapper implements OpCacheInterface
      */
     public function invalidate($filePath, $isForce = false)
     {
-        return opcache_invalidate($filePath, $isForce);
+        return Opcache_invalidate($filePath, $isForce);
     }
 
     /**
@@ -34,7 +34,7 @@ class OpCacheWrapper implements OpCacheInterface
      */
     public function reset()
     {
-        return opcache_reset();
+        return Opcache_reset();
     }
 
     /**
@@ -42,7 +42,7 @@ class OpCacheWrapper implements OpCacheInterface
      */
     public function getStatus()
     {
-        return opcache_get_status();
+        return Opcache_get_status();
     }
 
     /**
@@ -50,7 +50,7 @@ class OpCacheWrapper implements OpCacheInterface
      */
     public function getConfiguration()
     {
-        return opcache_get_configuration();
+        return Opcache_get_configuration();
     }
 
     /**
@@ -58,6 +58,6 @@ class OpCacheWrapper implements OpCacheInterface
      */
     public function isCached($filePath)
     {
-        return opcache_is_script_cached($filePath);
+        return Opcache_is_script_cached($filePath);
     }
 }

@@ -6,7 +6,7 @@
  * Time: 10:57 PM
  */
 
-namespace Glushko\OpCacheManagement\Block\Adminhtml\Management\Index;
+namespace Glushko\OpcacheManagement\Block\Adminhtml\Management\Index;
 
 use Magento\Backend\Block\Widget\Form\Generic as GenericFormWidget;
 

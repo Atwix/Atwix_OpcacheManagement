@@ -6,7 +6,7 @@
  * Time: 9:22 PM
  */
 
-namespace Glushko\OpCacheManagement\Controller\Adminhtml\Management;
+namespace Glushko\OpcacheManagement\Controller\Adminhtml\Management;
 
 use Magento\Backend\App\Action;
 use Magento\Framework\Controller\ResultFactory;

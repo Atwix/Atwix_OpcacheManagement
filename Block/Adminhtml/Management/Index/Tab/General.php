@@ -6,9 +6,10 @@
  * Time: 11:08 PM
  */
 
-namespace Glushko\OpCacheManagement\Block\Adminhtml\Management\Index\Tab;
+namespace Glushko\OpcacheManagement\Block\Adminhtml\Management\Index\Tab;
 
-use Glushko\OpCacheManagement\Lib\OpCacheInterface;
+use Glushko\OpcacheManagement\Service\Opcache\Information\GetOpcacheStatus;
+use Glushko\OpcacheManagement\Service\Opcache\Information\GetOpcacheVersion;
 use Magento\Backend\Block\Template as BackendTemplate;
 use Magento\Backend\Block\Template\Context as BackendTemplateContext;
 use Magento\Backend\Block\Widget\Tab\TabInterface as TabWidgetInterface;
@@ -19,33 +20,41 @@ use Magento\Backend\Block\Widget\Tab\TabInterface as TabWidgetInterface;
 class General extends BackendTemplate implements TabWidgetInterface
 {
     /**
-     * @var OpCacheInterface
+     * Path to template file in theme.
+     *
+     * @var string
      */
-    protected $opCacheWrapper;
+    protected $_template = 'Glushko_OpcacheManagement::management/index/tab/general.phtml';
+
+    /**
+     * @var GetOpcacheVersion
+     */
+    protected $getOpcacheVersion;
+    
+    /**
+     * @var GetOpcacheStatus
+     */
+    protected $getOpcacheStatus;
 
     /**
      * General constructor.
      *
      * @param BackendTemplateContext $context
-     * @param OpCacheInterface $opCacheWrapper
+     * @param GetOpcacheVersion $getOpcacheVersion
+     * @param GetOpcacheStatus $getOpcacheStatus
      * @param array $data
      */
     public function __construct(
         BackendTemplateContext $context,
-        OpCacheInterface $opCacheWrapper,
+        GetOpcacheVersion $getOpcacheVersion,
+        GetOpcacheStatus $getOpcacheStatus,
         array $data = []
     ) {
         parent::__construct($context, $data);
 
-        $this->opCacheWrapper = $opCacheWrapper;
+        $this->getOpcacheVersion = $getOpcacheVersion;
+        $this->getOpcacheStatus = $getOpcacheStatus;
     }
-
-    /**
-     * Path to template file in theme.
-     *
-     * @var string
-     */
-    protected $_template = 'Glushko_OpCacheManagement::management/index/tab/general.phtml';
 
     /**
      * @inheritdoc
@@ -79,8 +88,21 @@ class General extends BackendTemplate implements TabWidgetInterface
         return false;
     }
 
-    public function getConfiguration()
+    /**
+     * @return string
+     */
+    public function getOpcacheVersion()
     {
-        return $this->opCacheWrapper->getConfiguration();
+        return $this->getOpcacheVersion->getOpcacheProductName() . ' ' . $this->getOpcacheVersion->getOpcacheVersion();
+    }
+
+    public function getUptime()
+    {
+        return '';
+    }
+
+    public function getLastRestart()
+    {
+        return '';
     }
 }

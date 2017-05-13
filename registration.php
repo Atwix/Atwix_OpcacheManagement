@@ -6,6 +6,6 @@
 
 \Magento\Framework\Component\ComponentRegistrar::register(
     \Magento\Framework\Component\ComponentRegistrar::MODULE,
-    'Glushko_OpCacheManagement',
+    'Glushko_OpcacheManagement',
     __DIR__
 );
