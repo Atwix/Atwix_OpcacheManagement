@@ -49,4 +49,9 @@ interface OpcacheInterface
      * @return bool
      */
     public function isCached($filePath);
+
+    /**
+     * @return bool
+     */
+    public function isEnabled();
 }

@@ -18,7 +18,7 @@ class OpcacheWrapper implements OpcacheInterface
      */
     public function compile($filePath)
     {
-        return Opcache_compile_file($filePath);
+        return opcache_compile_file($filePath);
     }
 
     /**
@@ -26,7 +26,7 @@ class OpcacheWrapper implements OpcacheInterface
      */
     public function invalidate($filePath, $isForce = false)
     {
-        return Opcache_invalidate($filePath, $isForce);
+        return opcache_invalidate($filePath, $isForce);
     }
 
     /**
@@ -34,7 +34,7 @@ class OpcacheWrapper implements OpcacheInterface
      */
     public function reset()
     {
-        return Opcache_reset();
+        return opcache_reset();
     }
 
     /**
@@ -42,7 +42,7 @@ class OpcacheWrapper implements OpcacheInterface
      */
     public function getStatus()
     {
-        return Opcache_get_status();
+        return opcache_get_status();
     }
 
     /**
@@ -50,7 +50,7 @@ class OpcacheWrapper implements OpcacheInterface
      */
     public function getConfiguration()
     {
-        return Opcache_get_configuration();
+        return opcache_get_configuration();
     }
 
     /**
@@ -58,6 +58,14 @@ class OpcacheWrapper implements OpcacheInterface
      */
     public function isCached($filePath)
     {
-        return Opcache_is_script_cached($filePath);
+        return opcache_is_script_cached($filePath);
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function isEnabled()
+    {
+        return extension_loaded('Zend OPcache') && (ini_get('opcache.enable') || ini_get('opcache.enable_cli'));
     }
 }

@@ -17,19 +17,19 @@ $memoryUsage = $block->getMemoryUsage();
     <table class="admin__table-secondary">
         <tbody>
             <tr>
-                <th><?php  echo __('Used Memory') ?></th>
+                <th><strong><?php  echo __('Used Memory') ?></strong></th>
                 <td><?php echo $memoryUsage['used_memory']; ?></td>
             </tr>
             <tr>
-                <th><?php  echo __('Free Memory') ?></th>
+                <th><strong><?php  echo __('Free Memory') ?></strong></th>
                 <td><?php echo $memoryUsage['free_memory']; ?></td>
             </tr>
             <tr>
-                <th><?php  echo __('Wasted Memory') ?></th>
+                <th><strong><?php  echo __('Wasted Memory') ?></strong></th>
                 <td><?php echo $memoryUsage['wasted_memory']; ?></td>
             </tr>
             <tr>
-                <th><?php  echo __('Current Wasted Percentage') ?></th>
+                <th><strong><?php  echo __('Current Wasted Percentage') ?></strong></th>
                 <td><?php echo $memoryUsage['current_wasted_percentage']; ?></td>
             </tr>
         </tbody>

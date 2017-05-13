@@ -22,7 +22,7 @@
                 <?php if (is_bool($value)) : ?>
                     <td><?php echo $value ? 'on' : 'off'; ?></td>
                 <?php elseif (is_string($value) && '' == $value) : ?>
-                    <td><?php echo __('no value'); ?></td>
+                    <td><em><?php echo __('no value'); ?></em></td>
                 <?php else : ?>
                     <td><?php echo $value; ?></td>
                 <?php endif; ?>

@@ -18,6 +18,10 @@
                     <argument name="block" xsi:type="string">Glushko\OpcacheManagement\Block\Adminhtml\Management\Index\Tab\MemoryUsageTab</argument>
                 </action>
                 <action method="addTab">
+                    <argument name="name" xsi:type="string">statistics_tab</argument>
+                    <argument name="block" xsi:type="string">Glushko\OpcacheManagement\Block\Adminhtml\Management\Index\Tab\StatisticsTab</argument>
+                </action>
+                <action method="addTab">
                     <argument name="name" xsi:type="string">directives_tab</argument>
                     <argument name="block" xsi:type="string">Glushko\OpcacheManagement\Block\Adminhtml\Management\Index\Tab\DirectivesTab</argument>
                 </action>
