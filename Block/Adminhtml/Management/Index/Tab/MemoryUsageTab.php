@@ -9,27 +9,21 @@
 namespace Glushko\OpcacheManagement\Block\Adminhtml\Management\Index\Tab;
 
 use Glushko\OpcacheManagement\Service\Opcache\Information\GetOpcacheStatus;
-use Glushko\OpcacheManagement\Service\Opcache\Information\GetOpcacheVersion;
 use Magento\Backend\Block\Template as BackendTemplate;
 use Magento\Backend\Block\Template\Context as BackendTemplateContext;
 use Magento\Backend\Block\Widget\Tab\TabInterface as TabWidgetInterface;
 
 /**
- * Class General
+ * Class MemoryUsageTab
  */
-class General extends BackendTemplate implements TabWidgetInterface
+class MemoryUsageTab extends BackendTemplate implements TabWidgetInterface
 {
     /**
      * Path to template file in theme.
      *
      * @var string
      */
-    protected $_template = 'Glushko_OpcacheManagement::management/index/tab/general.phtml';
-
-    /**
-     * @var GetOpcacheVersion
-     */
-    protected $getOpcacheVersion;
+    protected $_template = 'Glushko_OpcacheManagement::management/index/tab/memory_usage_tab.phtml';
 
     /**
      * @var GetOpcacheStatus
@@ -40,19 +34,16 @@ class General extends BackendTemplate implements TabWidgetInterface
      * General constructor.
      *
      * @param BackendTemplateContext $context
-     * @param GetOpcacheVersion $getOpcacheVersion
      * @param GetOpcacheStatus $getOpcacheStatus
      * @param array $data
      */
     public function __construct(
         BackendTemplateContext $context,
-        GetOpcacheVersion $getOpcacheVersion,
         GetOpcacheStatus $getOpcacheStatus,
         array $data = []
     ) {
         parent::__construct($context, $data);
 
-        $this->getOpcacheVersion = $getOpcacheVersion;
         $this->getOpcacheStatus = $getOpcacheStatus;
     }
 
@@ -61,7 +52,7 @@ class General extends BackendTemplate implements TabWidgetInterface
      */
     public function getTabLabel()
     {
-        return __('General');
+        return __('Memory Usage');
     }
 
     /**
@@ -69,7 +60,7 @@ class General extends BackendTemplate implements TabWidgetInterface
      */
     public function getTabTitle()
     {
-        return __('General');
+        return __('Memory Usage');
     }
 
     /**
@@ -89,24 +80,10 @@ class General extends BackendTemplate implements TabWidgetInterface
     }
 
     /**
-     * @return string
+     * @return array
      */
-    public function getOpcacheVersion()
+    public function getMemoryUsage()
     {
-        return $this->getOpcacheVersion->getOpcacheProductName() . ' ' . $this->getOpcacheVersion->getOpcacheVersion();
-    }
-
-    public function getUptime()
-    {
-        $statistics = $this->getOpcacheStatus->getStatistics();
-
-        return $statistics['start_time'];
-    }
-
-    public function getLastRestart()
-    {
-        $statistics = $this->getOpcacheStatus->getStatistics();
-
-        return $statistics['last_restart_time'];
+        return $this->getOpcacheStatus->getMemoryUsage();
     }
 }
