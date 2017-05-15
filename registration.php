@@ -1,7 +1,8 @@
 <?php
 /**
- * Copyright © 2016 Magento. All rights reserved.
- * See COPYING.txt for license details.
+ * @author Roman Glushko
+ * @copyright Copyright (c) 2017 Roman Glushko (http://www.linkedin.com/in/glushko-roman/)
+ * @package Glushko_OpcacheManagement
  */
 
 \Magento\Framework\Component\ComponentRegistrar::register(

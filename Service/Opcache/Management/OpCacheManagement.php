@@ -1,9 +1,8 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: weysman
- * Date: 5/13/17
- * Time: 9:27 AM
+ * @author Roman Glushko
+ * @copyright Copyright (c) 2017 Roman Glushko (http://www.linkedin.com/in/glushko-roman/)
+ * @package Glushko_OpcacheManagement
  */
 
 namespace Glushko\OpcacheManagement\Service\Opcache\Management;
