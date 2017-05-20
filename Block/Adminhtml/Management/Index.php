@@ -55,7 +55,17 @@ class Index extends BackendFormContainer
                 'onclick' => 'setLocation(\'' . $this->getCheckCacheUrl() . '\')',
                 'class' => 'primary',
             ],
-            1
+            2
+        );
+        $this->addButton(
+            'compileAll',
+            [
+                'label' => __('Compile All Scripts'),
+                'title' => __('Compile all PHP scripts in Magento without execution'),
+                'onclick' => 'setLocation(\'' . $this->getCompileAllUrl() . '\')',
+                'class' => 'primary',
+            ],
+            2
         );
 
         return parent::_prepareLayout();
@@ -75,5 +85,13 @@ class Index extends BackendFormContainer
     protected function getCheckCacheUrl()
     {
         return $this->getUrl('*/*/checkCache');
+    }
+
+    /**
+     * @return string
+     */
+    protected function getCompileAllUrl()
+    {
+        return $this->getUrl('*/*/compileAll');
     }
 }

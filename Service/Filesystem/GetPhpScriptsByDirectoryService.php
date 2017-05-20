@@ -5,7 +5,7 @@
  * @package Glushko_OpcacheManagement
  */
 
-namespace Glushko\OpcacheManagement\Service\Opcache\Management\Compilation;
+namespace Glushko\OpcacheManagement\Service\Filesystem;
 
 use Glushko\OpcacheManagement\Service\Filesystem\RecursiveDirectoryIteratorFactory;
 use Glushko\OpcacheManagement\Service\Filesystem\RecursiveIteratorIteratorFactory;
@@ -13,10 +13,13 @@ use RecursiveIteratorIterator;
 use SplFileInfo;
 
 /**
- * Class GetScriptsToCompileService
+ * Class GetPhpScriptsByDirectoryService
  */
-class GetScriptsToCompileService
+class GetPhpScriptsByDirectoryService
 {
+
+    const FILE_EXTENSION_PHP = 'php';
+
     /**
      * @var RecursiveIteratorIteratorFactory
      */
@@ -44,9 +47,9 @@ class GetScriptsToCompileService
     /**
      * Retrieve scripts by specified directories
      *
-     * @param string[] $scriptSourceDirectory
+     * @param string $scriptSourceDirectory
      *
-     * @return array
+     * @return string[]
      */
     public function execute($scriptSourceDirectory)
     {
@@ -59,7 +62,7 @@ class GetScriptsToCompileService
 
         /** @var $file SplFileInfo */
         foreach ($iterator as $file) {
-            if ($file->isFile() && 'php' === $file->getExtension()) {
+            if ($file->isFile() && static::FILE_EXTENSION_PHP === $file->getExtension()) {
                 $result[] = $file->getPath() . DIRECTORY_SEPARATOR . $file->getFilename();
             }
         }
