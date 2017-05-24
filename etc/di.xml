@@ -9,4 +9,11 @@
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
     <preference for="Glushko\OpcacheManagement\Lib\OpcacheInterface"
                 type="Glushko\OpcacheManagement\Lib\OpcacheWrapper" />
+    <type name="Magento\Framework\Console\CommandListInterface">
+        <arguments>
+            <argument name="commands" xsi:type="array">
+                <item name="glushkoResetOpcodeCacheCommand" xsi:type="object">Glushko\OpcacheManagement\Console\ResetCacheCommand</item>
+            </argument>
+        </arguments>
+    </type>
 </config>
