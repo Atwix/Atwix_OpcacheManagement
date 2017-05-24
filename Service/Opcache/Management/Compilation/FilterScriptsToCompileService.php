@@ -20,6 +20,8 @@ class FilterScriptsToCompileService
     protected $pathPartsToFilter = [
         '/Test/',
         '/Install/',
+        'Magento/Framework/Message/Success.php',
+        'Glushko/OpcacheManagement/Controller/Adminhtml/Management/CompileAll.php',
     ];
 
     /**
