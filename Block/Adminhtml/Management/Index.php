@@ -40,7 +40,7 @@ class Index extends BackendFormContainer
             [
                 'label' => __('Reset Cache'),
                 'title' => __('It resets the entire opcode cache. ' .
-                    'After pressing, all scripts will be reloaded and reparsed the next time they are hit.'),
+                    'After pressing, all cached scripts will be reloaded and reparsed the next time they are hit.'),
                 'onclick' => 'setLocation(\'' . $this->getResetCacheUrl() . '\')',
                 'class' => 'primary',
             ],
@@ -65,7 +65,7 @@ class Index extends BackendFormContainer
                 'onclick' => 'setLocation(\'' . $this->getCompileAllUrl() . '\')',
                 'class' => 'primary',
             ],
-            2
+            3
         );
 
         return parent::_prepareLayout();
