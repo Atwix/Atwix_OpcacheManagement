@@ -78,7 +78,6 @@ class CompileAll extends Action
         $countOfCompiledScripts = 0;
 
         try {
-
             /** @var string $sourceDirectory */
             foreach ($sourceDirectories as $sourceDirectory) {
                 $scriptsToCompile = $this->getPhpScriptsByDirectoryService->execute($sourceDirectory);

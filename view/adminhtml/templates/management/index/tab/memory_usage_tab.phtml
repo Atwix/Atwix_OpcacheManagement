@@ -5,10 +5,7 @@
  * @package Glushko_OpcacheManagement
  */
 /** @var Glushko\OpcacheManagement\Block\Adminhtml\Management\Index\Tab\MemoryUsageTab $block */
-/** @var array $memoryUsage */
-$memoryUsage = $block->getMemoryUsage();
 ?>
-
 <div class="fieldset-wrapper customer-information">
     <div class="fieldset-wrapper-title">
         <span class="title"><?php echo __('Memory Usage') ?></span>
@@ -16,20 +13,20 @@ $memoryUsage = $block->getMemoryUsage();
     <table class="admin__table-secondary">
         <tbody>
             <tr>
-                <th><strong><?php  echo __('Used Memory') ?></strong></th>
-                <td><?php echo $memoryUsage['used_memory']; ?></td>
+                <th><strong><?php  echo __('Free Memory') ?></strong></th>
+                <td><?php echo $block->getFreeMemory(); ?></td>
             </tr>
             <tr>
-                <th><strong><?php  echo __('Free Memory') ?></strong></th>
-                <td><?php echo $memoryUsage['free_memory']; ?></td>
+                <th><strong><?php  echo __('Used Memory') ?></strong></th>
+                <td><?php echo $block->getUsedMemory(); ?></td>
             </tr>
             <tr>
                 <th><strong><?php  echo __('Wasted Memory') ?></strong></th>
-                <td><?php echo $memoryUsage['wasted_memory']; ?></td>
+                <td><?php echo $block->getWastedMemory(); ?></td>
             </tr>
             <tr>
                 <th><strong><?php  echo __('Current Wasted Percentage') ?></strong></th>
-                <td><?php echo $memoryUsage['current_wasted_percentage']; ?></td>
+                <td><?php echo $block->getCurrentWastedPercentage(); ?></td>
             </tr>
         </tbody>
     </table>
