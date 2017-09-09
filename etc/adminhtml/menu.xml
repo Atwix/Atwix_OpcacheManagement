@@ -14,7 +14,7 @@
              module="Glushko_OpcacheManagement"
              sortOrder="30"
              parent="Magento_Backend::system_tools"
-             action="glushko_Opcache/management/index"
+             action="glushko_opcache/management/index"
              resource="Glushko_OpcacheManagement::index" />
     </menu>
 </config>
