@@ -114,6 +114,6 @@ class GetOpcacheStatus
      */
     protected function getOpcacheStatus()
     {
-        return $this->opcacheWrapper->getStatus();
+        return $this->opcacheWrapper->getStatus(); // todo: add lazy loading
     }
 }

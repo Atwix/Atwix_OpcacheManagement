@@ -14,6 +14,8 @@ use Magento\Framework\DataObjectFactory;
 
 /**
  * Class CachedScriptsCollection
+ *
+ * todo: move to Model directory
  */
 class CachedScriptsCollection extends DataCollection
 {
@@ -57,13 +59,15 @@ class CachedScriptsCollection extends DataCollection
             return $this;
         }
 
-        $cachedScripts = $this->prepareCachedScripts($this->getOpcacheStatus->getCachedScripts());
+        $allCachedScripts = $this->getOpcacheStatus->getCachedScripts();
+        $this->_totalRecords = count($allCachedScripts);
+        $this->_setIsLoaded();
 
-        foreach ($cachedScripts as $cachedScriptInformation) {
+        $cachedScriptsPage = $this->prepareCachedScripts($allCachedScripts);
+
+        foreach ($cachedScriptsPage as $cachedScriptInformation) {
             $this->addItem($this->map($cachedScriptInformation));
         }
-
-        $this->_setIsLoaded(true);
     }
 
     /**
@@ -88,7 +92,7 @@ class CachedScriptsCollection extends DataCollection
      */
     protected function prepareCachedScriptInformation($cachedScriptInformation)
     {
-        return 'Hits: ' . $cachedScriptInformation['hits'];
+        return __('Hits: %1', $cachedScriptInformation['hits']);
     }
 
     /**
@@ -98,14 +102,12 @@ class CachedScriptsCollection extends DataCollection
      */
     protected function prepareCachedScripts($allCachedScripts)
     {
-        $scriptCollection = array_values($allCachedScripts);
-
+        $currentPage = $this->getCurPage();
+        $pageSize = $this->getPageSize();
         // apply filters
 
-
         // apply paging
-        //$scriptCollection = array_slice($allCachedScripts, $this->getCurPage(), $this->getPageSize());
-        //var_dump($scriptCollection);
+        $scriptCollection = array_slice($allCachedScripts, $currentPage, $pageSize);
 
         return $scriptCollection;
     }
