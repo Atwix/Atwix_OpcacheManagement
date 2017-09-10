@@ -10,6 +10,7 @@ namespace Glushko\OpcacheManagement\Service\Opcache\Information\CachedScripts;
 use Glushko\OpcacheManagement\Service\Opcache\Information\GetOpcacheStatus;
 use Magento\Framework\Data\Collection as DataCollection;
 use Magento\Framework\Data\Collection\EntityFactoryInterface;
+use Magento\Framework\DataObject;
 use Magento\Framework\DataObjectFactory;
 
 /**
@@ -46,7 +47,6 @@ class CachedScriptsCollection extends DataCollection
         $this->dataObjectFactory = $dataObjectFactory;
     }
 
-
     /**
      * @param bool $printQuery
      * @param bool $logQuery
@@ -73,7 +73,7 @@ class CachedScriptsCollection extends DataCollection
     /**
      * @param array $cachedScriptInformation
      *
-     * @return \Magento\Framework\DataObject
+     * @return DataObject
      */
     protected function map($cachedScriptInformation)
     {

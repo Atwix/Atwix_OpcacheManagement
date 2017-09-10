@@ -100,16 +100,16 @@ class CachedScriptsGrid extends ExtendedGridWidget
             ]
         );
 
-//        $this->addColumn(
-//            'action',
-//            [
-//                'header' => __('Action'),
-//                'align' => 'center',
-//                'filter' => false,
-//                'sortable' => false,
-//                'renderer' => 'Magento\Customer\Block\Adminhtml\Edit\Tab\Newsletter\Grid\Renderer\Action'
-//            ]
-//        );
+        $this->addColumn(
+            'action',
+            [
+                'header' => __('Action'),
+                'align' => 'center',
+                'filter' => false,
+                'sortable' => false,
+                'renderer' => 'Glushko\OpcacheManagement\Block\Adminhtml\Management\Index\Tab\CachedScripts\Grid\CachedScriptsActionRenderer'
+            ]
+        );
 
         return parent::_prepareColumns();
     }
