@@ -60,12 +60,13 @@ class CachedScriptsCollection extends DataCollection
         }
 
         $allCachedScripts = $this->getOpcacheStatus->getCachedScripts();
+
         $this->_totalRecords = count($allCachedScripts);
         $this->_setIsLoaded();
 
-        $cachedScriptsPage = $this->prepareCachedScripts($allCachedScripts);
+        $pagedCachedScripts = $this->applyPagination($allCachedScripts);
 
-        foreach ($cachedScriptsPage as $cachedScriptInformation) {
+        foreach ($pagedCachedScripts as $cachedScriptInformation) {
             $this->addItem($this->map($cachedScriptInformation));
         }
     }
@@ -100,11 +101,10 @@ class CachedScriptsCollection extends DataCollection
      *
      * @return array
      */
-    protected function prepareCachedScripts($allCachedScripts)
+    protected function applyPagination($allCachedScripts)
     {
         $currentPage = $this->getCurPage();
         $pageSize = $this->getPageSize();
-        // apply filters
 
         // apply paging
         $scriptCollection = array_slice($allCachedScripts, $currentPage, $pageSize);

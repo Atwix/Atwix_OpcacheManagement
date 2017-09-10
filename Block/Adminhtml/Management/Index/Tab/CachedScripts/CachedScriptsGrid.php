@@ -86,6 +86,8 @@ class CachedScriptsGrid extends ExtendedGridWidget
                 'header' => __('Script Path'),
                 'align' => 'left',
                 'index' => 'script_path',
+                'sortable' => false,
+                'filter' => false,
             ]
         );
 
