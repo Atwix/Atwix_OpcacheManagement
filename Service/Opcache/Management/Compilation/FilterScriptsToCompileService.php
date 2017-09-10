@@ -16,6 +16,7 @@ class FilterScriptsToCompileService
      * Parts of script path that shouldn't be cached
      *
      * @var string[]
+     * todo: move to configs
      */
     protected $pathPartsToFilter = [
         '/Test/',

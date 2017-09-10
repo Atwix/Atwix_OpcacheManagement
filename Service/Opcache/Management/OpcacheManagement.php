@@ -9,7 +9,6 @@ namespace Glushko\OpcacheManagement\Service\Opcache\Management;
 
 use Glushko\OpcacheManagement\Lib\OpcacheInterface;
 use Glushko\OpcacheManagement\Service\Opcache\Information\GetOpcacheStatus;
-use Magento\Framework\Filesystem;
 use Magento\Framework\Filesystem\Io\File as FilesystemFileIo;
 
 /**

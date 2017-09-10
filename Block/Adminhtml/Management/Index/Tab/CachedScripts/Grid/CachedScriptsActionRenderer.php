@@ -49,6 +49,8 @@ class CachedScriptsActionRenderer extends AbstractRenderer
     }
 
     /**
+     * Renders action list for cached scripts
+     *
      * @param DataObject $row
      *
      * @return string
@@ -74,16 +76,6 @@ class CachedScriptsActionRenderer extends AbstractRenderer
     }
 
     /**
-     * @param string $value
-     *
-     * @return string
-     */
-    protected function getEscapedValue($value)
-    {
-        return addcslashes(htmlspecialchars($value), '\\\'');
-    }
-
-    /**
      * @param array $actions
      *
      * @return string
@@ -91,6 +83,7 @@ class CachedScriptsActionRenderer extends AbstractRenderer
     protected function actionsToHtml(array $actions)
     {
         $html = [];
+        /** @var DataObject $attributesObject */
         $attributesObject = $this->dataObjectFactory->create();
 
         foreach ($actions as $action) {
