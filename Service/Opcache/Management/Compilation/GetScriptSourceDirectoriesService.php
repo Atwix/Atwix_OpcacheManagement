@@ -139,7 +139,7 @@ class GetScriptSourceDirectoriesService
     }
 
     /**
-     *
+     * @return string
      */
     protected function getGenerationDirectory()
     {

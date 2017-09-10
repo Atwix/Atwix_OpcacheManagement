@@ -7,8 +7,9 @@
 
 namespace Glushko\OpcacheManagement\Block\Adminhtml\Management\Index\Tab\CachedScripts;
 
-use Glushko\OpcacheManagement\Service\Opcache\Information\CachedScripts\CachedScriptsCollection;
-use Glushko\OpcacheManagement\Service\Opcache\Information\CachedScripts\CachedScriptsCollectionFactory;
+use Glushko\OpcacheManagement\Block\Adminhtml\Management\Index\Tab\CachedScripts\Grid\CachedScriptsActionRenderer;
+use Glushko\OpcacheManagement\Model\Resource\CachedScripts\CachedScriptsCollection;
+use Glushko\OpcacheManagement\Model\Resource\CachedScripts\CachedScriptsCollectionFactory;
 use Magento\Backend\Block\Template\Context as BackendBlockContext;
 use Magento\Backend\Block\Widget\Grid\Extended as ExtendedGridWidget;
 use Magento\Backend\Helper\Data as BackendDataHelper;
@@ -109,7 +110,7 @@ class CachedScriptsGrid extends ExtendedGridWidget
                 'align' => 'center',
                 'filter' => false,
                 'sortable' => false,
-                'renderer' => 'Glushko\OpcacheManagement\Block\Adminhtml\Management\Index\Tab\CachedScripts\Grid\CachedScriptsActionRenderer'
+                'renderer' => CachedScriptsActionRenderer::class
             ]
         );
 

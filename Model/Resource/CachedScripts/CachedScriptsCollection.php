@@ -5,7 +5,7 @@
  * @package Glushko_OpcacheManagement
  */
 
-namespace Glushko\OpcacheManagement\Service\Opcache\Information\CachedScripts;
+namespace Glushko\OpcacheManagement\Model\Resource\CachedScripts;
 
 use Glushko\OpcacheManagement\Service\Opcache\Information\GetOpcacheStatus;
 use Magento\Framework\Data\Collection as DataCollection;
@@ -15,8 +15,6 @@ use Magento\Framework\DataObjectFactory;
 
 /**
  * Class CachedScriptsCollection
- *
- * todo: move to Model directory
  */
 class CachedScriptsCollection extends DataCollection
 {

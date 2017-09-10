@@ -15,6 +15,7 @@ class SinceTimeFormatter
     // todo: refactor this
 
     /**
+     *
      * @param int $time
      * @param int $original
      * @param int $extended

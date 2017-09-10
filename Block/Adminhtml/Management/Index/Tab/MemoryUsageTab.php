@@ -40,10 +40,11 @@ class MemoryUsageTab extends BackendTemplate implements TabWidgetInterface
      * @var BytesFormatter
      */
     protected $bytesFormatter;
+
     /**
      * @var PercentageFormatter
      */
-    private $percentageFormatter;
+    protected $percentageFormatter;
 
     /**
      * General constructor.

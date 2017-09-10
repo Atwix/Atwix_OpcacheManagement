@@ -123,7 +123,12 @@ class General extends BackendTemplate implements TabWidgetInterface
         /** @var DateTime $dateTime */
         $dateTime = $this->dateTimeFactory->create();
 
-        return $this->sinceTimeFormatter->format($dateTime->getTimestamp(), $statistics['start_time'], 1, '');
+        return $this->sinceTimeFormatter->format(
+            $dateTime->getTimestamp(),
+            $statistics['start_time'],
+            1,
+            ''
+        );
     }
 
     /**

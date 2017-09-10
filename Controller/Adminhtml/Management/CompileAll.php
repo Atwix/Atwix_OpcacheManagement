@@ -39,7 +39,7 @@ class CompileAll extends Action
     /**
      * @var FilterScriptsToCompileService
      */
-    private $filterScriptsToCompileService;
+    protected $filterScriptsToCompileService;
 
     /**
      * Index constructor.

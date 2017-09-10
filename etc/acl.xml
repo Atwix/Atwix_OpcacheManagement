@@ -12,7 +12,8 @@
             <resource id="Magento_Backend::admin">
                 <resource id="Magento_Backend::system">
                     <resource id="Magento_Backend::tools">
-                        <resource id="Glushko_OpcacheManagement::index" title="Opcache Management" translate="title" sortOrder="30" />
+                        <resource id="Glushko_OpcacheManagement::index"
+                                  title="Opcache Management" translate="title" sortOrder="30" />
                     </resource>
                 </resource>
             </resource>
