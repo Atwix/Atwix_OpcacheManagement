@@ -8,8 +8,8 @@
 namespace Glushko\OpcacheManagement\Block\Adminhtml\Management\Index\Tab\CachedScripts;
 
 use Glushko\OpcacheManagement\Block\Adminhtml\Management\Index\Tab\CachedScripts\Grid\CachedScriptsActionRenderer;
-use Glushko\OpcacheManagement\Model\Resource\CachedScripts\CachedScriptsCollection;
-use Glushko\OpcacheManagement\Model\Resource\CachedScripts\CachedScriptsCollectionFactory;
+use Glushko\OpcacheManagement\Model\ResourceModel\CachedScripts\CachedScriptsCollection;
+use Glushko\OpcacheManagement\Model\ResourceModel\CachedScripts\CachedScriptsCollectionFactory;
 use Magento\Backend\Block\Template\Context as BackendBlockContext;
 use Magento\Backend\Block\Widget\Grid\Extended as ExtendedGridWidget;
 use Magento\Backend\Helper\Data as BackendDataHelper;
