@@ -12,7 +12,7 @@
     <type name="Magento\Framework\Console\CommandListInterface">
         <arguments>
             <argument name="commands" xsi:type="array">
-                <item name="glushkoResetOpcodeCacheCommand" xsi:type="object">Glushko\OpcacheManagement\Console\ResetCacheCommand</item>
+                <item name="glushkoResetOpcodeCliCacheCommand" xsi:type="object">Glushko\OpcacheManagement\Console\ResetOpcodeCliCacheCommand</item>
             </argument>
         </arguments>
     </type>

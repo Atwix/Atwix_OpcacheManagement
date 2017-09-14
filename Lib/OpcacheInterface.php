@@ -57,11 +57,18 @@ interface OpcacheInterface
     public function isCached($filePath);
 
     /**
-     * Check if Zend OPcache is enabled
+     * Check if Zend Opcache is enabled
      *
      * @return bool
      */
     public function isEnabled();
+
+    /**
+     * Check if Zend Opcache CLI is enabled
+     *
+     * @return bool
+     */
+    public function isCliEnabled();
 
     /**
      * Check if the current version of Opcache supports invalidation of compiled files
