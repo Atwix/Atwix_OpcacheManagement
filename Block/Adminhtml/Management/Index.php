@@ -7,13 +7,40 @@
 
 namespace Glushko\OpcacheManagement\Block\Adminhtml\Management;
 
-use Magento\Backend\Block\Widget\Form\Container as BackendFormContainer;
+use Magento\Backend\Block\Widget\Container as BackendContainerWidget;
 
 /**
  * Class Index
  */
-class Index extends BackendFormContainer
+class Index extends BackendContainerWidget
 {
+    /**
+     * @var string
+     */
+    protected $containerElementId;
+
+    /**
+     * Retrieves the container element Id
+     *
+     * @return string
+     */
+    public function getContainerElementId()
+    {
+        return $this->containerElementId;
+    }
+
+    /**
+     * Configures the container element Id
+     *
+     * @param string $containerElementId
+     *
+     * @return void
+     */
+    public function setContainerElementId($containerElementId)
+    {
+        $this->containerElementId = $containerElementId;
+    }
+
     /**
      * @inheritdoc
      */
@@ -21,9 +48,8 @@ class Index extends BackendFormContainer
     {
         parent::_construct();
 
-        $this->_blockGroup = 'Glushko_OpcacheManagement';
         $this->_controller = 'Adminhtml_Management';
-        $this->_mode = 'index';
+        $this->setContainerElementId('glushko_management_container');
     }
 
     /**

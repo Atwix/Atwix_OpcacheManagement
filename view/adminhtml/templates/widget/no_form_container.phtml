@@ -1,0 +1,20 @@
+<?php
+/**
+ * @author Roman Glushko
+ * @copyright Copyright (c) 2017 Roman Glushko (http://www.linkedin.com/in/glushko-roman/)
+ * @package Glushko_OpcacheManagement
+ */
+/** @var Glushko\OpcacheManagement\Block\Adminhtml\Management\Index $block **/
+?>
+
+<?php if ($block->getButtonsHtml('header')): ?>
+    <div class="page-form-actions" <?php /* @escapeNotVerified */ echo $block->getUiId('content-header') ?>><?php echo $block->getButtonsHtml('header') ?></div>
+<?php endif; ?>
+
+<div id="<?php echo $block->getContainerElementId(); ?>"></div>
+
+<?php if ($block->hasFooterButtons()): ?>
+    <div class="content-footer">
+        <p class="form-buttons"><?php echo $block->getButtonsHtml('footer') ?></p>
+    </div>
+<?php endif; ?>

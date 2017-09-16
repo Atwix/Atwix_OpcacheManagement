@@ -36,7 +36,7 @@
             </block>
         </referenceContainer>
         <referenceContainer name="content">
-            <block class="Glushko\OpcacheManagement\Block\Adminhtml\Management\Index" name="glushko.opcache_management.content"/>
+            <block class="Glushko\OpcacheManagement\Block\Adminhtml\Management\Index" name="glushko.opcache_management.content" template="Glushko_OpcacheManagement::widget/no_form_container.phtml"/>
         </referenceContainer>
     </body>
 </page>
