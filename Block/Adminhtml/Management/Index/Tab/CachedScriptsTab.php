@@ -7,9 +7,7 @@
 
 namespace Glushko\OpcacheManagement\Block\Adminhtml\Management\Index\Tab;
 
-use Glushko\OpcacheManagement\Service\Opcache\Information\GetOpcacheStatus;
 use Magento\Backend\Block\Template as BackendTemplate;
-use Magento\Backend\Block\Template\Context as BackendTemplateContext;
 use Magento\Backend\Block\Widget\Tab\TabInterface as TabWidgetInterface;
 
 /**
@@ -23,28 +21,6 @@ class CachedScriptsTab extends BackendTemplate implements TabWidgetInterface
      * @var string
      */
     protected $_template = 'Glushko_OpcacheManagement::management/index/tab/cached_scripts_tab.phtml';
-
-    /**
-     * @var GetOpcacheStatus
-     */
-    protected $getOpcacheStatus;
-
-    /**
-     * General constructor.
-     *
-     * @param BackendTemplateContext $context
-     * @param GetOpcacheStatus $getOpcacheStatus
-     * @param array $data
-     */
-    public function __construct(
-        BackendTemplateContext $context,
-        GetOpcacheStatus $getOpcacheStatus,
-        array $data = []
-    ) {
-        parent::__construct($context, $data);
-
-        $this->getOpcacheStatus = $getOpcacheStatus;
-    }
 
     /**
      * @inheritdoc

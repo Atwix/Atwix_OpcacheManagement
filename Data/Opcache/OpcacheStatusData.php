@@ -70,9 +70,9 @@ class OpcacheStatusData
     }
 
     /**
-     * @return mixed
+     * @return bool
      */
-    public function getisRestartPending()
+    public function isRestartPending()
     {
         return $this->isRestartPending;
     }

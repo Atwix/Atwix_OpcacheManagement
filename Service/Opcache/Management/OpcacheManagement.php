@@ -8,7 +8,7 @@
 namespace Glushko\OpcacheManagement\Service\Opcache\Management;
 
 use Glushko\OpcacheManagement\Lib\OpcacheInterface;
-use Glushko\OpcacheManagement\Service\Opcache\Information\GetOpcacheStatus;
+use Glushko\OpcacheManagement\Service\Opcache\Information\GetCachedScriptsService;
 use Magento\Framework\Filesystem\Io\File as FilesystemFileIo;
 
 /**
@@ -27,25 +27,25 @@ class OpcacheManagement
     protected $filesystem;
 
     /**
-     * @var GetOpcacheStatus
+     * @var GetCachedScriptsService
      */
-    protected $getOpcacheStatus;
+    protected $getCachedScriptsService;
 
     /**
      * OpcacheManagement constructor.
      *
      * @param OpcacheInterface $opcacheWrapper
-     * @param GetOpcacheStatus $getOpcacheStatus
      * @param FilesystemFileIo $filesystem
+     * @param GetCachedScriptsService $getCachedScriptsService
      */
     public function __construct(
         OpcacheInterface $opcacheWrapper,
-        GetOpcacheStatus $getOpcacheStatus,
-        FilesystemFileIo $filesystem
+        FilesystemFileIo $filesystem,
+        GetCachedScriptsService $getCachedScriptsService
     ) {
         $this->opcacheWrapper = $opcacheWrapper;
         $this->filesystem = $filesystem;
-        $this->getOpcacheStatus = $getOpcacheStatus;
+        $this->getCachedScriptsService = $getCachedScriptsService;
     }
 
     /**
@@ -67,7 +67,7 @@ class OpcacheManagement
      */
     public function invalidateCachedScripts($isForce = false)
     {
-        $cachedScripts = $this->getOpcacheStatus->getCachedScripts();
+        $cachedScripts = $this->getCachedScriptsService->execute();
 
         foreach ($cachedScripts as $filePath => $cacheData) {
             $this->invalidateCachedScript($filePath, $isForce);
@@ -102,7 +102,7 @@ class OpcacheManagement
      */
     public function compileScript($filePath)
     {
-        $cachedScripts = $this->getOpcacheStatus->getCachedScripts();
+        $cachedScripts = $this->getCachedScriptsService->execute();
 
         if (array_key_exists($filePath, $cachedScripts)) {
             return true;
