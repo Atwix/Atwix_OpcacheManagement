@@ -21,8 +21,8 @@ class Tabs extends TabsWidget
     {
         parent::_construct();
 
-        $this->setId('theme_tabs');
-        $this->setDestElementId('edit_form');
-        $this->setTitle(__('Information'));
+        $this->setData('id', 'glushko_opcache_management_tabs');
+        $this->setDestElementId('glushko_management_container');
+        $this->setData('title', __('Information'));
     }
 }

@@ -62,7 +62,13 @@ class SinceTimeFormatter
         }
 
         if ($extended && $time > 60) {
-            $text = ' and ' . $this->format($time, $time < 86400 ? ($time < 3600 ? $amount * 60 : $amount * 3600) : $day * 86400, 0, '') . $text;
+            $text = ' and ' .
+                $this->format(
+                    $time,
+                    $time < 86400 ? ($time < 3600 ? $amount * 60 : $amount * 3600) : $day * 86400,
+                    0,
+                    ''
+                ) . $text;
         }
 
         return $amount . ' ' . $unit . ' ' . $text;

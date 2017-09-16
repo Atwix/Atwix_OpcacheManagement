@@ -46,10 +46,7 @@ class CachedScriptsCollection extends DataCollection
     }
 
     /**
-     * @param bool $printQuery
-     * @param bool $logQuery
-     *
-     * @return $this
+     * @inheritdoc
      */
     public function loadData($printQuery = false, $logQuery = false)
     {
@@ -67,6 +64,8 @@ class CachedScriptsCollection extends DataCollection
         foreach ($pagedCachedScripts as $cachedScriptInformation) {
             $this->addItem($this->map($cachedScriptInformation));
         }
+
+        return $this;
     }
 
     /**

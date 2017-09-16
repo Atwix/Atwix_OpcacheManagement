@@ -7,8 +7,6 @@
 
 namespace Glushko\OpcacheManagement\Service\Filesystem;
 
-use Glushko\OpcacheManagement\Service\Filesystem\RecursiveDirectoryIteratorFactory;
-use Glushko\OpcacheManagement\Service\Filesystem\RecursiveIteratorIteratorFactory;
 use RecursiveIteratorIterator;
 use SplFileInfo;
 

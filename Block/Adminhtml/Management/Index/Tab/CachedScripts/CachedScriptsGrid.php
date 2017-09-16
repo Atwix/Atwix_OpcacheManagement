@@ -48,10 +48,10 @@ class CachedScriptsGrid extends ExtendedGridWidget
     {
         parent::_construct();
 
-        $this->setId('cachedScriptsGrid');
+        $this->setData('id', 'cachedScriptsGrid');
         $this->setDefaultSort('script_path');
         $this->setDefaultDir('desc');
-        $this->setUseAjax(true);
+        $this->setData('use_ajax', true);
         $this->setEmptyText(__('No scrips have been cached yet.'));
     }
 
@@ -77,7 +77,7 @@ class CachedScriptsGrid extends ExtendedGridWidget
     }
 
     /**
-     * @return $this
+     * @inheritdoc
      */
     protected function _prepareColumns()
     {
