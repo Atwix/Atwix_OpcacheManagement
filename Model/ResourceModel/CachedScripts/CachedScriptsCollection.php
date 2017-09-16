@@ -7,7 +7,7 @@
 
 namespace Glushko\OpcacheManagement\Model\ResourceModel\CachedScripts;
 
-use Glushko\OpcacheManagement\Service\Opcache\Information\GetOpcacheStatus;
+use Glushko\OpcacheManagement\Service\Opcache\Information\GetCachedScriptsService;
 use Magento\Framework\Data\Collection as DataCollection;
 use Magento\Framework\Data\Collection\EntityFactoryInterface;
 use Magento\Framework\DataObject;
@@ -19,30 +19,30 @@ use Magento\Framework\DataObjectFactory;
 class CachedScriptsCollection extends DataCollection
 {
     /**
-     * @var GetOpcacheStatus
-     */
-    protected $getOpcacheStatus;
-
-    /**
      * @var DataObjectFactory
      */
     protected $dataObjectFactory;
 
     /**
+     * @var GetCachedScriptsService
+     */
+    protected $getCachedScriptsService;
+
+    /**
      * CachedScriptsCollection constructor.
      * @param EntityFactoryInterface $entityFactory
-     * @param GetOpcacheStatus $getOpcacheStatus
+     * @param GetCachedScriptsService $getCachedScriptsService
      * @param DataObjectFactory $dataObjectFactory
      */
     public function __construct(
         EntityFactoryInterface $entityFactory,
-        GetOpcacheStatus $getOpcacheStatus,
+        GetCachedScriptsService $getCachedScriptsService,
         DataObjectFactory $dataObjectFactory
     ) {
         parent::__construct($entityFactory);
 
-        $this->getOpcacheStatus = $getOpcacheStatus;
         $this->dataObjectFactory = $dataObjectFactory;
+        $this->getCachedScriptsService = $getCachedScriptsService;
     }
 
     /**
@@ -54,7 +54,7 @@ class CachedScriptsCollection extends DataCollection
             return $this;
         }
 
-        $allCachedScripts = $this->getOpcacheStatus->getCachedScripts();
+        $allCachedScripts = $this->getCachedScriptsService->execute();
 
         $this->_totalRecords = count($allCachedScripts);
         $this->_setIsLoaded();

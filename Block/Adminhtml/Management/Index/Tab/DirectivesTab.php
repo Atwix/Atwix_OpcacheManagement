@@ -7,7 +7,7 @@
 
 namespace Glushko\OpcacheManagement\Block\Adminhtml\Management\Index\Tab;
 
-use Glushko\OpcacheManagement\Service\Opcache\Information\GetOpcacheConfiguration;
+use Glushko\OpcacheManagement\Service\Opcache\Information\GetOpcacheDirectivesService;
 use Magento\Backend\Block\Template as BackendTemplate;
 use Magento\Backend\Block\Template\Context as BackendTemplateContext;
 use Magento\Backend\Block\Widget\Tab\TabInterface as TabWidgetInterface;
@@ -25,25 +25,24 @@ class DirectivesTab extends BackendTemplate implements TabWidgetInterface
     protected $_template = 'Glushko_OpcacheManagement::management/index/tab/directives_tab.phtml';
 
     /**
-     * @var GetOpcacheConfiguration
+     * @var GetOpcacheDirectivesService
      */
-    protected $getOpcacheConfiguration;
+    protected $getOpcacheDirectivesService;
 
     /**
      * General constructor.
      *
      * @param BackendTemplateContext $context
-     * @param GetOpcacheConfiguration $getOpcacheConfiguration
+     * @param GetOpcacheDirectivesService $getOpcacheDirectivesService
      * @param array $data
      */
     public function __construct(
         BackendTemplateContext $context,
-        GetOpcacheConfiguration $getOpcacheConfiguration,
+        GetOpcacheDirectivesService $getOpcacheDirectivesService,
         array $data = []
     ) {
         parent::__construct($context, $data);
-
-        $this->getOpcacheConfiguration = $getOpcacheConfiguration;
+        $this->getOpcacheDirectivesService = $getOpcacheDirectivesService;
     }
 
     /**
@@ -83,6 +82,6 @@ class DirectivesTab extends BackendTemplate implements TabWidgetInterface
      */
     public function getDirectives()
     {
-        return $this->getOpcacheConfiguration->getDirectives();
+        return $this->getOpcacheDirectivesService->execute();
     }
 }

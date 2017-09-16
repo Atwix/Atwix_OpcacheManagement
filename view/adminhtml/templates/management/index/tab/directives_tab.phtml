@@ -10,13 +10,13 @@
 
 <div class="fieldset-wrapper customer-information">
     <div class="fieldset-wrapper-title">
-        <span class="title"><?php echo __('Directives') ?></span>
+        <span class="title"><?php echo __('Directives'); ?></span>
     </div>
     <table class="admin__table-secondary">
         <tbody>
         <?php foreach ($block->getDirectives() as $directive => $value) : ?>
             <tr>
-                <th><strong><?php  echo $directive; ?></strong></th>
+                <th><strong><?php echo $directive; ?></strong></th>
 
                 <?php if (is_bool($value)) : ?>
                     <td><?php echo $value ? 'on' : 'off'; ?></td>

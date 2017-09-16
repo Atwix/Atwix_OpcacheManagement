@@ -8,24 +8,24 @@
 ?>
 <div class="fieldset-wrapper customer-information">
     <div class="fieldset-wrapper-title">
-        <span class="title"><?php echo __('Memory Usage') ?></span>
+        <span class="title"><?php echo __('Memory Usage'); ?></span>
     </div>
     <table class="admin__table-secondary">
         <tbody>
             <tr>
-                <th><strong><?php  echo __('Free Memory') ?></strong></th>
+                <th><strong><?php echo __('Free Memory'); ?></strong></th>
                 <td><?php echo $block->getFreeMemory(); ?></td>
             </tr>
             <tr>
-                <th><strong><?php  echo __('Used Memory') ?></strong></th>
+                <th><strong><?php echo __('Used Memory'); ?></strong></th>
                 <td><?php echo $block->getUsedMemory(); ?></td>
             </tr>
             <tr>
-                <th><strong><?php  echo __('Wasted Memory') ?></strong></th>
+                <th><strong><?php echo __('Wasted Memory'); ?></strong></th>
                 <td><?php echo $block->getWastedMemory(); ?></td>
             </tr>
             <tr>
-                <th><strong><?php  echo __('Current Wasted Percentage') ?></strong></th>
+                <th><strong><?php echo __('Current Wasted Percentage'); ?></strong></th>
                 <td><?php echo $block->getCurrentWastedPercentage(); ?></td>
             </tr>
         </tbody>

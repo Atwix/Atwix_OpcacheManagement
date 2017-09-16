@@ -11,7 +11,7 @@ use DateTime;
 use Glushko\OpcacheManagement\Factory\DateTimeFactory;
 use Glushko\OpcacheManagement\Service\Format\SinceTimeFormatter;
 use Glushko\OpcacheManagement\Service\Opcache\Information\GetOpcacheStatus;
-use Glushko\OpcacheManagement\Service\Opcache\Information\GetOpcacheVersion;
+use Glushko\OpcacheManagement\Service\Opcache\Information\GetOpcacheVersionService;
 use Magento\Backend\Block\Template as BackendTemplate;
 use Magento\Backend\Block\Template\Context as BackendTemplateContext;
 use Magento\Backend\Block\Widget\Tab\TabInterface as TabWidgetInterface;
@@ -29,7 +29,7 @@ class General extends BackendTemplate implements TabWidgetInterface
     protected $_template = 'Glushko_OpcacheManagement::management/index/tab/general.phtml';
 
     /**
-     * @var GetOpcacheVersion
+     * @var GetOpcacheVersionService
      */
     protected $getOpcacheVersion;
 
@@ -52,7 +52,7 @@ class General extends BackendTemplate implements TabWidgetInterface
      * General constructor.
      *
      * @param BackendTemplateContext $context
-     * @param GetOpcacheVersion $getOpcacheVersion
+     * @param GetOpcacheVersionService $getOpcacheVersion
      * @param GetOpcacheStatus $getOpcacheStatus
      * @param SinceTimeFormatter $sinceTimeFormatter
      * @param DateTimeFactory $dateTimeFactory
@@ -60,7 +60,7 @@ class General extends BackendTemplate implements TabWidgetInterface
      */
     public function __construct(
         BackendTemplateContext $context,
-        GetOpcacheVersion $getOpcacheVersion,
+        GetOpcacheVersionService $getOpcacheVersion,
         GetOpcacheStatus $getOpcacheStatus,
         SinceTimeFormatter $sinceTimeFormatter,
         DateTimeFactory $dateTimeFactory,

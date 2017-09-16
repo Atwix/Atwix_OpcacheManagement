@@ -7,7 +7,8 @@
 
 namespace Glushko\OpcacheManagement\Block\Adminhtml\Management\Index\Tab;
 
-use Glushko\OpcacheManagement\Service\Opcache\Information\GetOpcacheStatus;
+use Glushko\OpcacheManagement\Data\Opcache\OpcacheStatisticsData;
+use Glushko\OpcacheManagement\Service\Opcache\Information\GetOpcacheStatisticsService;
 use Magento\Backend\Block\Template as BackendTemplate;
 use Magento\Backend\Block\Template\Context as BackendTemplateContext;
 use Magento\Backend\Block\Widget\Tab\TabInterface as TabWidgetInterface;
@@ -25,25 +26,29 @@ class StatisticsTab extends BackendTemplate implements TabWidgetInterface
     protected $_template = 'Glushko_OpcacheManagement::management/index/tab/statistics_tab.phtml';
 
     /**
-     * @var GetOpcacheStatus
+     * @var GetOpcacheStatisticsService
      */
-    protected $getOpcacheStatus;
+    protected $getOpcacheStatisticsService;
+
+    /**
+     * @var OpcacheStatisticsData
+     */
+    protected $opcacheStatisticsData;
 
     /**
      * General constructor.
      *
      * @param BackendTemplateContext $context
-     * @param GetOpcacheStatus $getOpcacheStatus
+     * @param GetOpcacheStatisticsService $getOpcacheStatisticsService
      * @param array $data
      */
     public function __construct(
         BackendTemplateContext $context,
-        GetOpcacheStatus $getOpcacheStatus,
+        GetOpcacheStatisticsService $getOpcacheStatisticsService,
         array $data = []
     ) {
         parent::__construct($context, $data);
-
-        $this->getOpcacheStatus = $getOpcacheStatus;
+        $this->getOpcacheStatisticsService = $getOpcacheStatisticsService;
     }
 
     /**
@@ -79,10 +84,62 @@ class StatisticsTab extends BackendTemplate implements TabWidgetInterface
     }
 
     /**
-     * @return array
+     * @return OpcacheStatisticsData
      */
-    public function getStatistics()
+    public function getOpcacheStatisticsData()
     {
-        return $this->getOpcacheStatus->getStatistics();
+        if (NULL === $this->opcacheStatisticsData) {
+            $this->opcacheStatisticsData = $this->getOpcacheStatisticsService->execute();
+        }
+
+        return $this->opcacheStatisticsData;
+    }
+
+    /**
+     * @return int
+     */
+    public function getHits()
+    {
+        return $this->getOpcacheStatisticsData()->getHits();
+    }
+
+    /**
+     * @return int
+     */
+    public function getOomRestarts()
+    {
+        return $this->getOpcacheStatisticsData()->getOomRestarts();
+    }
+
+    /**
+     * @return int
+     */
+    public function getManualRestarts()
+    {
+        return $this->getOpcacheStatisticsData()->getManualRestarts();
+    }
+
+    /**
+     * @return int
+     */
+    public function getMaxCachedKeys()
+    {
+        return $this->getOpcacheStatisticsData()->getMaxCachedKeys();
+    }
+
+    /**
+     * @return int
+     */
+    public function getNumberCachedKeys()
+    {
+        return $this->getOpcacheStatisticsData()->getNumberCachedKeys();
+    }
+
+    /**
+     * @return int
+     */
+    public function getNumberCachedScripts()
+    {
+        return $this->getOpcacheStatisticsData()->getNumberCachedScripts();
     }
 }

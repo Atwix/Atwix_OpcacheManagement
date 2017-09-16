@@ -7,9 +7,10 @@
 
 namespace Glushko\OpcacheManagement\Block\Adminhtml\Management\Index\Tab;
 
+use Glushko\OpcacheManagement\Data\Opcache\OpcacheMemoryUsageData;
 use Glushko\OpcacheManagement\Service\Format\BytesFormatter;
 use Glushko\OpcacheManagement\Service\Format\PercentageFormatter;
-use Glushko\OpcacheManagement\Service\Opcache\Information\GetOpcacheStatus;
+use Glushko\OpcacheManagement\Service\Opcache\Information\GetOpcacheMemoryUsageService;
 use Magento\Backend\Block\Template as BackendTemplate;
 use Magento\Backend\Block\Template\Context as BackendTemplateContext;
 use Magento\Backend\Block\Widget\Tab\TabInterface as TabWidgetInterface;
@@ -27,14 +28,9 @@ class MemoryUsageTab extends BackendTemplate implements TabWidgetInterface
     protected $_template = 'Glushko_OpcacheManagement::management/index/tab/memory_usage_tab.phtml';
 
     /**
-     * @var GetOpcacheStatus
+     * @var OpcacheMemoryUsageData
      */
-    protected $getOpcacheStatus;
-
-    /**
-     * @var array
-     */
-    protected $memoryUsage = false;
+    protected $opcacheMemoryUsageData;
 
     /**
      * @var BytesFormatter
@@ -47,26 +43,31 @@ class MemoryUsageTab extends BackendTemplate implements TabWidgetInterface
     protected $percentageFormatter;
 
     /**
+     * @var GetOpcacheMemoryUsageService
+     */
+    protected $getOpcacheMemoryUsageService;
+
+    /**
      * General constructor.
      *
      * @param BackendTemplateContext $context
-     * @param GetOpcacheStatus $getOpcacheStatus
+     * @param GetOpcacheMemoryUsageService $getOpcacheMemoryUsageService
      * @param BytesFormatter $bytesFormatter
      * @param PercentageFormatter $percentageFormatter
      * @param array $data
      */
     public function __construct(
         BackendTemplateContext $context,
-        GetOpcacheStatus $getOpcacheStatus,
+        GetOpcacheMemoryUsageService $getOpcacheMemoryUsageService,
         BytesFormatter $bytesFormatter,
         PercentageFormatter $percentageFormatter,
         array $data = []
     ) {
         parent::__construct($context, $data);
 
-        $this->getOpcacheStatus = $getOpcacheStatus;
         $this->bytesFormatter = $bytesFormatter;
         $this->percentageFormatter = $percentageFormatter;
+        $this->getOpcacheMemoryUsageService = $getOpcacheMemoryUsageService;
     }
 
     /**
@@ -102,15 +103,15 @@ class MemoryUsageTab extends BackendTemplate implements TabWidgetInterface
     }
 
     /**
-     * @return array
+     * @return OpcacheMemoryUsageData
      */
-    public function getMemoryUsage()
+    public function getOpcacheMemoryUsageData()
     {
-        if (!$this->memoryUsage) {
-            $this->memoryUsage = $this->getOpcacheStatus->getMemoryUsage();
+        if (NULL === $this->opcacheMemoryUsageData) {
+            $this->opcacheMemoryUsageData = $this->getOpcacheMemoryUsageService->execute();
         }
 
-        return $this->memoryUsage;
+        return $this->opcacheMemoryUsageData;
     }
 
     /**
@@ -118,7 +119,9 @@ class MemoryUsageTab extends BackendTemplate implements TabWidgetInterface
      */
     public function getUsedMemory()
     {
-        return $this->bytesFormatter->format($this->getMemoryUsage()['used_memory']);
+        return $this->bytesFormatter->format(
+            $this->getOpcacheMemoryUsageData()->getUsedMemory()
+        );
     }
 
     /**
@@ -126,7 +129,9 @@ class MemoryUsageTab extends BackendTemplate implements TabWidgetInterface
      */
     public function getFreeMemory()
     {
-        return $this->bytesFormatter->format($this->getMemoryUsage()['free_memory']);
+        return $this->bytesFormatter->format(
+            $this->getOpcacheMemoryUsageData()->getFreeMemory()
+        );
     }
 
     /**
@@ -134,7 +139,9 @@ class MemoryUsageTab extends BackendTemplate implements TabWidgetInterface
      */
     public function getWastedMemory()
     {
-        return $this->bytesFormatter->format($this->getMemoryUsage()['wasted_memory']);
+        return $this->bytesFormatter->format(
+            $this->getOpcacheMemoryUsageData()->getWastedMemory()
+        );
     }
 
     /**
@@ -142,6 +149,8 @@ class MemoryUsageTab extends BackendTemplate implements TabWidgetInterface
      */
     public function getCurrentWastedPercentage()
     {
-        return $this->percentageFormatter->format($this->getMemoryUsage()['current_wasted_percentage']);
+        return $this->percentageFormatter->format(
+            $this->getOpcacheMemoryUsageData()->getCurrentWastedPercentage()
+        );
     }
 }

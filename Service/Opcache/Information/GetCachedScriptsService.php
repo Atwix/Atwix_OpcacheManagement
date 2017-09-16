@@ -10,9 +10,9 @@ namespace Glushko\OpcacheManagement\Service\Opcache\Information;
 use Glushko\OpcacheManagement\Lib\OpcacheInterface;
 
 /**
- * Class GetOpcacheConfiguration
+ * Class GetCachedScriptsService
  */
-class GetOpcacheConfiguration
+class GetCachedScriptsService
 {
     /**
      * @var OpcacheInterface
@@ -24,28 +24,22 @@ class GetOpcacheConfiguration
      *
      * @param OpcacheInterface $opcacheWrapper
      */
-    public function __construct(OpcacheInterface $opcacheWrapper)
-    {
+    public function __construct(
+        OpcacheInterface $opcacheWrapper
+    ) {
         $this->opcacheWrapper = $opcacheWrapper;
     }
 
     /**
+     * Retrieves information regarding memory usage of Opcache
+     *
      * @return array
      */
-    public function getDirectives()
+    public function execute()
     {
-        $configuration = $this->opcacheWrapper->getConfiguration();
+        $statusData = $this->opcacheWrapper->getStatus();
 
-        return $configuration['directives'];
+        return array_key_exists('scripts', $statusData) ? $statusData['scripts'] : [];
     }
 
-    /**
-     * @return array
-     */
-    public function getBlacklist()
-    {
-        $configuration = $this->opcacheWrapper->getConfiguration();
-
-        return $configuration['blacklist'];
-    }
 }
