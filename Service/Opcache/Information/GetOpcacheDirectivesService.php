@@ -7,7 +7,7 @@
 
 namespace Glushko\OpcacheManagement\Service\Opcache\Information;
 
-use Glushko\OpcacheManagement\Lib\OpcacheInterface;
+use Glushko\OpcacheManagement\Lib\OpcacheLibInterface;
 
 /**
  * Class GetOpcacheDirectivesService
@@ -15,16 +15,16 @@ use Glushko\OpcacheManagement\Lib\OpcacheInterface;
 class GetOpcacheDirectivesService
 {
     /**
-     * @var OpcacheInterface
+     * @var OpcacheLibInterface
      */
     protected $opcacheWrapper;
 
     /**
      * GetOpcacheVersion constructor.
      *
-     * @param OpcacheInterface $opcacheWrapper
+     * @param OpcacheLibInterface $opcacheWrapper
      */
-    public function __construct(OpcacheInterface $opcacheWrapper)
+    public function __construct(OpcacheLibInterface $opcacheWrapper)
     {
         $this->opcacheWrapper = $opcacheWrapper;
     }

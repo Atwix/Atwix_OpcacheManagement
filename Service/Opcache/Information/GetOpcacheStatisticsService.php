@@ -8,7 +8,7 @@
 namespace Glushko\OpcacheManagement\Service\Opcache\Information;
 
 use Glushko\OpcacheManagement\Data\Opcache\OpcacheStatisticsData;
-use Glushko\OpcacheManagement\Lib\OpcacheInterface;
+use Glushko\OpcacheManagement\Lib\OpcacheLibInterface;
 use Glushko\OpcacheManagement\Mapper\Opcache\ArrayToOpcacheStatisticsDataMapper;
 
 /**
@@ -17,7 +17,7 @@ use Glushko\OpcacheManagement\Mapper\Opcache\ArrayToOpcacheStatisticsDataMapper;
 class GetOpcacheStatisticsService
 {
     /**
-     * @var OpcacheInterface
+     * @var OpcacheLibInterface
      */
     protected $opcacheWrapper;
 
@@ -29,11 +29,11 @@ class GetOpcacheStatisticsService
     /**
      * GetOpcacheVersion constructor.
      *
-     * @param OpcacheInterface $opcacheWrapper
+     * @param OpcacheLibInterface $opcacheWrapper
      * @param ArrayToOpcacheStatisticsDataMapper $arrayToOpcacheStatisticsDataMapper
      */
     public function __construct(
-        OpcacheInterface $opcacheWrapper,
+        OpcacheLibInterface $opcacheWrapper,
         ArrayToOpcacheStatisticsDataMapper $arrayToOpcacheStatisticsDataMapper
     ) {
         $this->opcacheWrapper = $opcacheWrapper;

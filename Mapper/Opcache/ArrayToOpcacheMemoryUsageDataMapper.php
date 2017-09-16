@@ -21,7 +21,7 @@ class ArrayToOpcacheMemoryUsageDataMapper
     protected $opcacheMemoryUsageDataFactory;
 
     /**
-     * ArrayToOpcacheVersionDataMapper constructor.
+     * ArrayToOpcacheMemoryUsageDataMapper constructor.
      *
      * @param OpcacheMemoryUsageDataFactory $opcacheMemoryUsageDataFactory
      */

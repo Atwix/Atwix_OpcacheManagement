@@ -7,7 +7,7 @@
 
 namespace Glushko\OpcacheManagement\Service\Opcache\Management;
 
-use Glushko\OpcacheManagement\Lib\OpcacheInterface;
+use Glushko\OpcacheManagement\Lib\OpcacheLibInterface;
 use Glushko\OpcacheManagement\Service\Opcache\Information\GetCachedScriptsService;
 use Magento\Framework\Filesystem\Io\File as FilesystemFileIo;
 
@@ -17,7 +17,7 @@ use Magento\Framework\Filesystem\Io\File as FilesystemFileIo;
 class OpcacheManagement
 {
     /**
-     * @var OpcacheInterface
+     * @var OpcacheLibInterface
      */
     protected $opcacheWrapper;
 
@@ -34,12 +34,12 @@ class OpcacheManagement
     /**
      * OpcacheManagement constructor.
      *
-     * @param OpcacheInterface $opcacheWrapper
+     * @param OpcacheLibInterface $opcacheWrapper
      * @param FilesystemFileIo $filesystem
      * @param GetCachedScriptsService $getCachedScriptsService
      */
     public function __construct(
-        OpcacheInterface $opcacheWrapper,
+        OpcacheLibInterface $opcacheWrapper,
         FilesystemFileIo $filesystem,
         GetCachedScriptsService $getCachedScriptsService
     ) {

@@ -7,7 +7,7 @@
 
 namespace Glushko\OpcacheManagement\Controller\Adminhtml\Management;
 
-use Glushko\OpcacheManagement\Lib\OpcacheInterface;
+use Glushko\OpcacheManagement\Lib\OpcacheLibInterface;
 use Glushko\OpcacheManagement\Service\Opcache\Management\OpcacheManagement;
 use Magento\Backend\App\Action;
 use Magento\Backend\App\Action\Context as BackendActionContext;
@@ -25,7 +25,7 @@ class CheckCache extends Action
     protected $opcacheManagement;
 
     /**
-     * @var OpcacheInterface
+     * @var OpcacheLibInterface
      */
     protected $opcacheWrapper;
 
@@ -33,12 +33,12 @@ class CheckCache extends Action
      * Index constructor.
      *
      * @param BackendActionContext $context
-     * @param OpcacheInterface $opcacheWrapper
+     * @param OpcacheLibInterface $opcacheWrapper
      * @param OpcacheManagement $opcacheManagement
      */
     public function __construct(
         BackendActionContext $context,
-        OpcacheInterface $opcacheWrapper,
+        OpcacheLibInterface $opcacheWrapper,
         OpcacheManagement $opcacheManagement
     ) {
         parent::__construct($context);

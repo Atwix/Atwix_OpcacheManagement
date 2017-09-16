@@ -7,7 +7,7 @@
 
 namespace Glushko\OpcacheManagement\Service\Opcache\Information;
 
-use Glushko\OpcacheManagement\Lib\OpcacheInterface;
+use Glushko\OpcacheManagement\Lib\OpcacheLibInterface;
 
 /**
  * Class GetCachedScriptsService
@@ -15,17 +15,17 @@ use Glushko\OpcacheManagement\Lib\OpcacheInterface;
 class GetCachedScriptsService
 {
     /**
-     * @var OpcacheInterface
+     * @var OpcacheLibInterface
      */
     protected $opcacheWrapper;
 
     /**
      * GetOpcacheVersion constructor.
      *
-     * @param OpcacheInterface $opcacheWrapper
+     * @param OpcacheLibInterface $opcacheWrapper
      */
     public function __construct(
-        OpcacheInterface $opcacheWrapper
+        OpcacheLibInterface $opcacheWrapper
     ) {
         $this->opcacheWrapper = $opcacheWrapper;
     }

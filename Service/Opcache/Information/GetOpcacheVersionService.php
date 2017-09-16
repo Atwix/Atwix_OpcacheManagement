@@ -8,7 +8,7 @@
 namespace Glushko\OpcacheManagement\Service\Opcache\Information;
 
 use Glushko\OpcacheManagement\Data\Opcache\OpcacheVersionData;
-use Glushko\OpcacheManagement\Lib\OpcacheInterface;
+use Glushko\OpcacheManagement\Lib\OpcacheLibInterface;
 use Glushko\OpcacheManagement\Mapper\Opcache\ArrayToOpcacheVersionDataMapper;
 
 /**
@@ -17,7 +17,7 @@ use Glushko\OpcacheManagement\Mapper\Opcache\ArrayToOpcacheVersionDataMapper;
 class GetOpcacheVersionService
 {
     /**
-     * @var OpcacheInterface
+     * @var OpcacheLibInterface
      */
     protected $opcacheWrapper;
 
@@ -29,11 +29,11 @@ class GetOpcacheVersionService
     /**
      * GetOpcacheVersion constructor.
      *
-     * @param OpcacheInterface $opcacheWrapper
+     * @param OpcacheLibInterface $opcacheWrapper
      * @param ArrayToOpcacheVersionDataMapper $arrayToOpcacheVersionDataMapper
      */
     public function __construct(
-        OpcacheInterface $opcacheWrapper,
+        OpcacheLibInterface $opcacheWrapper,
         ArrayToOpcacheVersionDataMapper $arrayToOpcacheVersionDataMapper
     ) {
         $this->opcacheWrapper = $opcacheWrapper;

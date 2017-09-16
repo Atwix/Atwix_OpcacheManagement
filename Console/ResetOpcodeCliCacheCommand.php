@@ -7,7 +7,7 @@
 
 namespace Glushko\OpcacheManagement\Console;
 
-use Glushko\OpcacheManagement\Lib\OpcacheInterface;
+use Glushko\OpcacheManagement\Lib\OpcacheLibInterface;
 use Glushko\OpcacheManagement\Service\Opcache\Management\OpcacheManagement;
 use Symfony\Component\Console\Command\Command as ConsoleCommand;
 use Symfony\Component\Console\Input\InputInterface;
@@ -19,7 +19,7 @@ use Symfony\Component\Console\Output\OutputInterface;
 class ResetOpcodeCliCacheCommand extends ConsoleCommand
 {
     /**
-     * @var OpcacheInterface
+     * @var OpcacheLibInterface
      */
     protected $opcache;
 
@@ -32,10 +32,10 @@ class ResetOpcodeCliCacheCommand extends ConsoleCommand
      * ResetCacheCommand constructor.
      *
      * @param OpcacheManagement $opcacheManagement
-     * @param OpcacheInterface $opcache
+     * @param OpcacheLibInterface $opcache
      */
     public function __construct(
-        OpcacheInterface $opcache,
+        OpcacheLibInterface $opcache,
         OpcacheManagement $opcacheManagement
     ) {
         parent::__construct();

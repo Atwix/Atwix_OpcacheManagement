@@ -38,3 +38,4 @@
 "OOM Restarts","OOM Restarts"
 "Manual Restarts","Manual Restarts"
 "Opcache Management","Opcache Management"
+"Opcache is disabled. Please check your configurations","Opcache is disabled. Please check your configurations"

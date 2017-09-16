@@ -8,9 +8,9 @@
 namespace Glushko\OpcacheManagement\Lib;
 
 /**
- * Class OpcacheWrapper
+ * Class OpcacheLib
  */
-class OpcacheWrapper implements OpcacheInterface
+class OpcacheLib implements OpcacheLibInterface
 {
     /**
      * @inheritdoc

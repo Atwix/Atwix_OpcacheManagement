@@ -8,7 +8,7 @@
 namespace Glushko\OpcacheManagement\Service\Opcache\Information;
 
 use Glushko\OpcacheManagement\Data\Opcache\OpcacheMemoryUsageData;
-use Glushko\OpcacheManagement\Lib\OpcacheInterface;
+use Glushko\OpcacheManagement\Lib\OpcacheLibInterface;
 use Glushko\OpcacheManagement\Mapper\Opcache\ArrayToOpcacheMemoryUsageDataMapper;
 
 /**
@@ -17,7 +17,7 @@ use Glushko\OpcacheManagement\Mapper\Opcache\ArrayToOpcacheMemoryUsageDataMapper
 class GetOpcacheMemoryUsageService
 {
     /**
-     * @var OpcacheInterface
+     * @var OpcacheLibInterface
      */
     protected $opcacheWrapper;
 
@@ -29,11 +29,11 @@ class GetOpcacheMemoryUsageService
     /**
      * GetOpcacheVersion constructor.
      *
-     * @param OpcacheInterface $opcacheWrapper
+     * @param OpcacheLibInterface $opcacheWrapper
      * @param ArrayToOpcacheMemoryUsageDataMapper $arrayToOpcacheMemoryUsageDataMapper
      */
     public function __construct(
-        OpcacheInterface $opcacheWrapper,
+        OpcacheLibInterface $opcacheWrapper,
         ArrayToOpcacheMemoryUsageDataMapper $arrayToOpcacheMemoryUsageDataMapper
     ) {
         $this->opcacheWrapper = $opcacheWrapper;

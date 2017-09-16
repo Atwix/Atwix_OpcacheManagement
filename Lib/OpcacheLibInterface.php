@@ -10,7 +10,7 @@ namespace Glushko\OpcacheManagement\Lib;
 /**
  * Interface OpcacheInterface
  */
-interface OpcacheInterface
+interface OpcacheLibInterface
 {
     /**
      * @param $filePath
