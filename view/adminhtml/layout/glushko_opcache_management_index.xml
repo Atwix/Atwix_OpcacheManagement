@@ -15,7 +15,7 @@
                 </block>
                 <action method="addTab">
                     <argument name="name" xsi:type="string">general_tab</argument>
-                    <argument name="block" xsi:type="string">Glushko\OpcacheManagement\Block\Adminhtml\Management\Index\Tab\General</argument>
+                    <argument name="block" xsi:type="string">Glushko\OpcacheManagement\Block\Adminhtml\Management\Index\Tab\GeneralTab</argument>
                 </action>
                 <action method="addTab">
                     <argument name="name" xsi:type="string">memory_usage_tab</argument>

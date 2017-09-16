@@ -20,14 +20,14 @@ use Magento\Backend\Block\Widget\Tab\TabInterface as TabWidgetInterface;
 /**
  * Class General
  */
-class General extends BackendTemplate implements TabWidgetInterface
+class GeneralTab extends BackendTemplate implements TabWidgetInterface
 {
     /**
      * Path to template file in theme.
      *
      * @var string
      */
-    protected $_template = 'Glushko_OpcacheManagement::management/index/tab/general.phtml';
+    protected $_template = 'Glushko_OpcacheManagement::management/index/tab/general_tab.phtml';
 
     /**
      * @var DateTimeFactory
