@@ -8,7 +8,7 @@
 namespace Glushko\OpcacheManagement\Block\Adminhtml\Management\Index\Tab;
 
 use DateTime;
-use Glushko\OpcacheManagement\Service\DateTime\DateTimeFactory;
+use Glushko\OpcacheManagement\Factory\DateTimeFactory;
 use Glushko\OpcacheManagement\Service\Format\SinceTimeFormatter;
 use Glushko\OpcacheManagement\Service\Opcache\Information\GetOpcacheStatus;
 use Glushko\OpcacheManagement\Service\Opcache\Information\GetOpcacheVersion;
@@ -111,7 +111,9 @@ class General extends BackendTemplate implements TabWidgetInterface
      */
     public function getOpcacheVersion()
     {
-        return $this->getOpcacheVersion->getOpcacheProductName() . ' ' . $this->getOpcacheVersion->getOpcacheVersion();
+        $opcacheVersionData = $this->getOpcacheVersion->execute();
+
+        return $opcacheVersionData->getProductName() . ' ' . $opcacheVersionData->getVersion();
     }
 
     /**

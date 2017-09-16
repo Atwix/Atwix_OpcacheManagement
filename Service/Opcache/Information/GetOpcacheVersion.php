@@ -7,7 +7,9 @@
 
 namespace Glushko\OpcacheManagement\Service\Opcache\Information;
 
+use Glushko\OpcacheManagement\Data\Opcache\OpcacheVersionData;
 use Glushko\OpcacheManagement\Lib\OpcacheInterface;
+use Glushko\OpcacheManagement\Mapper\Opcache\ArrayToOpcacheVersionDataMapper;
 
 /**
  * Class GetOpcacheVersion
@@ -20,33 +22,34 @@ class GetOpcacheVersion
     protected $opcacheWrapper;
 
     /**
+     * @var ArrayToOpcacheVersionDataMapper
+     */
+    protected $arrayToOpcacheVersionDataMapper;
+
+    /**
      * GetOpcacheVersion constructor.
      *
      * @param OpcacheInterface $opcacheWrapper
+     * @param ArrayToOpcacheVersionDataMapper $arrayToOpcacheVersionDataMapper
      */
-    public function __construct(OpcacheInterface $opcacheWrapper)
-    {
+    public function __construct(
+        OpcacheInterface $opcacheWrapper,
+        ArrayToOpcacheVersionDataMapper $arrayToOpcacheVersionDataMapper
+    ) {
         $this->opcacheWrapper = $opcacheWrapper;
+        $this->arrayToOpcacheVersionDataMapper = $arrayToOpcacheVersionDataMapper;
     }
 
     /**
-     * @return string
+     * Retrieves information regarding version of Opcache
+     *
+     * @return OpcacheVersionData
      */
-    public function getOpcacheProductName()
+    public function execute()
     {
-        $configuration = $this->opcacheWrapper->getConfiguration();
+        $versionData = $this->opcacheWrapper->getConfiguration();
 
-        return $configuration['version']['opcache_product_name'];
-    }
-
-    /**
-     * @return string
-     */
-    public function getOpcacheVersion()
-    {
-        $configuration = $this->opcacheWrapper->getConfiguration();
-
-        return $configuration['version']['version'];
+        return $this->arrayToOpcacheVersionDataMapper->map($versionData);
     }
 
 }
