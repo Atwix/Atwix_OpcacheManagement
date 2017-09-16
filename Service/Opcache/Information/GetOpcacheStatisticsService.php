@@ -7,7 +7,6 @@
 
 namespace Glushko\OpcacheManagement\Service\Opcache\Information;
 
-use Glushko\OpcacheManagement\Data\Opcache\OpcacheMemoryUsageData;
 use Glushko\OpcacheManagement\Data\Opcache\OpcacheStatisticsData;
 use Glushko\OpcacheManagement\Lib\OpcacheInterface;
 use Glushko\OpcacheManagement\Mapper\Opcache\ArrayToOpcacheStatisticsDataMapper;

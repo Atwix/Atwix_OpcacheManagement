@@ -8,9 +8,10 @@
 namespace Glushko\OpcacheManagement\Block\Adminhtml\Management\Index\Tab;
 
 use DateTime;
+use Glushko\OpcacheManagement\Data\Opcache\OpcacheStatisticsData;
 use Glushko\OpcacheManagement\Factory\DateTimeFactory;
 use Glushko\OpcacheManagement\Service\Format\SinceTimeFormatter;
-use Glushko\OpcacheManagement\Service\Opcache\Information\GetOpcacheStatus;
+use Glushko\OpcacheManagement\Service\Opcache\Information\GetOpcacheStatisticsService;
 use Glushko\OpcacheManagement\Service\Opcache\Information\GetOpcacheVersionService;
 use Magento\Backend\Block\Template as BackendTemplate;
 use Magento\Backend\Block\Template\Context as BackendTemplateContext;
@@ -29,14 +30,9 @@ class General extends BackendTemplate implements TabWidgetInterface
     protected $_template = 'Glushko_OpcacheManagement::management/index/tab/general.phtml';
 
     /**
-     * @var GetOpcacheVersionService
+     * @var DateTimeFactory
      */
-    protected $getOpcacheVersion;
-
-    /**
-     * @var GetOpcacheStatus
-     */
-    protected $getOpcacheStatus;
+    protected $dateTimeFactory;
 
     /**
      * @var SinceTimeFormatter
@@ -44,34 +40,44 @@ class General extends BackendTemplate implements TabWidgetInterface
     protected $sinceTimeFormatter;
 
     /**
-     * @var DateTimeFactory
+     * @var OpcacheStatisticsData
      */
-    protected $dateTimeFactory;
+    protected $opcacheStatisticsData;
+
+    /**
+     * @var GetOpcacheStatisticsService
+     */
+    protected $getOpcacheStatisticsService;
+
+    /**
+     * @var GetOpcacheVersionService
+     */
+    protected $getOpcacheVersionService;
 
     /**
      * General constructor.
      *
      * @param BackendTemplateContext $context
-     * @param GetOpcacheVersionService $getOpcacheVersion
-     * @param GetOpcacheStatus $getOpcacheStatus
+     * @param GetOpcacheVersionService $getOpcacheVersionService
+     * @param GetOpcacheStatisticsService $getOpcacheStatisticsService
      * @param SinceTimeFormatter $sinceTimeFormatter
      * @param DateTimeFactory $dateTimeFactory
      * @param array $data
      */
     public function __construct(
         BackendTemplateContext $context,
-        GetOpcacheVersionService $getOpcacheVersion,
-        GetOpcacheStatus $getOpcacheStatus,
+        GetOpcacheVersionService $getOpcacheVersionService,
+        GetOpcacheStatisticsService $getOpcacheStatisticsService,
         SinceTimeFormatter $sinceTimeFormatter,
         DateTimeFactory $dateTimeFactory,
         array $data = []
     ) {
         parent::__construct($context, $data);
 
-        $this->getOpcacheVersion = $getOpcacheVersion;
-        $this->getOpcacheStatus = $getOpcacheStatus;
+        $this->getOpcacheVersionService = $getOpcacheVersionService;
         $this->sinceTimeFormatter = $sinceTimeFormatter;
         $this->dateTimeFactory = $dateTimeFactory;
+        $this->getOpcacheStatisticsService = $getOpcacheStatisticsService;
     }
 
     /**
@@ -111,9 +117,21 @@ class General extends BackendTemplate implements TabWidgetInterface
      */
     public function getOpcacheVersion()
     {
-        $opcacheVersionData = $this->getOpcacheVersion->execute();
+        $opcacheVersionData = $this->getOpcacheVersionService->execute();
 
         return $opcacheVersionData->getProductName() . ' ' . $opcacheVersionData->getVersion();
+    }
+
+    /**
+     * @return OpcacheStatisticsData
+     */
+    public function getOpcacheStatisticsData()
+    {
+        if (NULL === $this->opcacheStatisticsData) {
+            $this->opcacheStatisticsData = $this->getOpcacheStatisticsService->execute();
+        }
+
+        return $this->opcacheStatisticsData;
     }
 
     /**
@@ -121,13 +139,13 @@ class General extends BackendTemplate implements TabWidgetInterface
      */
     public function getUptime()
     {
-        $statistics = $this->getOpcacheStatus->getStatistics();
         /** @var DateTime $dateTime */
         $dateTime = $this->dateTimeFactory->create();
+        $startTime = $this->getOpcacheStatisticsData()->getStartTime();
 
         return $this->sinceTimeFormatter->format(
             $dateTime->getTimestamp(),
-            $statistics['start_time'],
+            $startTime,
             1,
             ''
         );
@@ -138,10 +156,10 @@ class General extends BackendTemplate implements TabWidgetInterface
      */
     public function getLastRestart()
     {
-        $statistics = $this->getOpcacheStatus->getStatistics();
         /** @var DateTime $dateTime */
         $dateTime = $this->dateTimeFactory->create();
+        $lastRestartTime = $this->getOpcacheStatisticsData()->getLastRestartTime();
 
-        return $this->sinceTimeFormatter->format($dateTime->getTimestamp(), $statistics['last_restart_time']);
+        return $this->sinceTimeFormatter->format($dateTime->getTimestamp(), $lastRestartTime);
     }
 }

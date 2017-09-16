@@ -43,6 +43,16 @@ class OpcacheStatisticsData
     protected $manualRestarts;
 
     /**
+     * @var int
+     */
+    protected $startTime;
+
+    /**
+     * @var int
+     */
+    protected $lastRestartTime;
+
+    /**
      * @return int
      */
     public function getNumberCachedScripts()
@@ -148,5 +158,41 @@ class OpcacheStatisticsData
     public function setManualRestarts($manualRestarts)
     {
         $this->manualRestarts = $manualRestarts;
+    }
+
+    /**
+     * @return int
+     */
+    public function getStartTime()
+    {
+        return $this->startTime;
+    }
+
+    /**
+     * @param int $startTime
+     *
+     * @return void
+     */
+    public function setStartTime($startTime)
+    {
+        $this->startTime = $startTime;
+    }
+
+    /**
+     * @return int
+     */
+    public function getLastRestartTime()
+    {
+        return $this->lastRestartTime;
+    }
+
+    /**
+     * @param int $lastRestartTime
+     *
+     * @return void
+     */
+    public function setLastRestartTime($lastRestartTime)
+    {
+        $this->lastRestartTime = $lastRestartTime;
     }
 }

@@ -40,7 +40,7 @@ class ArrayToOpcacheMemoryUsageDataMapper
      */
     public function map($statusData)
     {
-        /** @var OpcacheMemoryUsageData $opcacheVersionData */
+        /** @var OpcacheMemoryUsageData $opcacheMemoryUsageData */
         $opcacheMemoryUsageData = $this->opcacheMemoryUsageDataFactory->create();
 
         if (!array_key_exists('memory_usage' , $statusData)) {

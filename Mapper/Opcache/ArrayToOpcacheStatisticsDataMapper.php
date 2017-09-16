@@ -73,6 +73,14 @@ class ArrayToOpcacheStatisticsDataMapper
             $opcacheStatisticsData->setNumberCachedScripts($statisticsData['num_cached_scripts']);
         }
 
+        if (array_key_exists('start_time', $statisticsData)) {
+            $opcacheStatisticsData->setStartTime($statisticsData['start_time']);
+        }
+
+        if (array_key_exists('last_restart_time', $statisticsData)) {
+            $opcacheStatisticsData->setLastRestartTime($statisticsData['last_restart_time']);
+        }
+
         return $opcacheStatisticsData;
     }
 }
