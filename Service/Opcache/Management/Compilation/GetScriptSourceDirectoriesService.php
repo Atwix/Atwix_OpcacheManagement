@@ -10,7 +10,7 @@ namespace Glushko\OpcacheManagement\Service\Opcache\Management\Compilation;
 use Magento\Framework\App\Filesystem\DirectoryList as AppFilesystemDirectoryList;
 use Magento\Framework\Component\ComponentRegistrar;
 use Magento\Framework\Component\ComponentRegistrarInterface;
-use Magento\Framework\Config\Composer\Package;
+use Magento\Framework\Config\Composer\Package as ComposerPackage;
 use Magento\Framework\Config\Composer\PackageFactory;
 use Magento\Framework\Filesystem\Directory\ReadFactory as DirectoryReadFactory;
 use Magento\Framework\Filesystem\DirectoryList;
@@ -192,7 +192,7 @@ class GetScriptSourceDirectoriesService
      *
      * @param string $file
      *
-     * @return Package
+     * @return ComposerPackage
      */
     protected function getModuleComposerPackage($file)
     {
