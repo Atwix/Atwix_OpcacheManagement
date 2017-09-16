@@ -30,7 +30,7 @@ class CheckCache extends Action
     protected $opcacheWrapper;
 
     /**
-     * Index constructor.
+     * CheckCache constructor.
      *
      * @param BackendActionContext $context
      * @param OpcacheLibInterface $opcacheWrapper

@@ -27,7 +27,7 @@ class GetOpcacheMemoryUsageService
     protected $arrayToOpcacheMemoryUsageDataMapper;
 
     /**
-     * GetOpcacheVersion constructor.
+     * GetOpcacheMemoryUsageService constructor.
      *
      * @param OpcacheLibInterface $opcacheWrapper
      * @param ArrayToOpcacheMemoryUsageDataMapper $arrayToOpcacheMemoryUsageDataMapper

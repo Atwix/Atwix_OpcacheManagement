@@ -20,7 +20,7 @@ class GetCachedScriptsService
     protected $opcacheWrapper;
 
     /**
-     * GetOpcacheVersion constructor.
+     * GetCachedScriptsService constructor.
      *
      * @param OpcacheLibInterface $opcacheWrapper
      */

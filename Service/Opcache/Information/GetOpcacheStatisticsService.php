@@ -27,7 +27,7 @@ class GetOpcacheStatisticsService
     protected $arrayToOpcacheStatisticsDataMapper;
 
     /**
-     * GetOpcacheVersion constructor.
+     * GetOpcacheStatisticsService constructor.
      *
      * @param OpcacheLibInterface $opcacheWrapper
      * @param ArrayToOpcacheStatisticsDataMapper $arrayToOpcacheStatisticsDataMapper

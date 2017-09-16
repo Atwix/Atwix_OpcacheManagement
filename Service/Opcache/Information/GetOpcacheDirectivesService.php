@@ -20,7 +20,7 @@ class GetOpcacheDirectivesService
     protected $opcacheWrapper;
 
     /**
-     * GetOpcacheVersion constructor.
+     * GetOpcacheDirectivesService constructor.
      *
      * @param OpcacheLibInterface $opcacheWrapper
      */

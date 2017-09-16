@@ -24,7 +24,7 @@ class ResetCache extends Action
     protected $opcacheManagement;
 
     /**
-     * Index constructor.
+     * ResetCache constructor.
      *
      * @param BackendActionContext $context
      * @param OpcacheManagement $opcacheManagement

@@ -30,7 +30,7 @@ class InvalidateCachedScript extends Action
     protected $urlCoder;
 
     /**
-     * Index constructor.
+     * InvalidateCachedScript constructor.
      *
      * @param BackendActionContext $context
      * @param OpcacheManagement $opcacheManagement

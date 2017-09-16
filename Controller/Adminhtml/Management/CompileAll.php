@@ -42,7 +42,7 @@ class CompileAll extends Action
     protected $filterScriptsToCompileService;
 
     /**
-     * Index constructor.
+     * CompileAll constructor.
      *
      * @param BackendActionContext $context
      * @param OpcacheManagement $opcacheManagement

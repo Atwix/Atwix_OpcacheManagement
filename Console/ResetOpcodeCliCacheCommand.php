@@ -29,7 +29,7 @@ class ResetOpcodeCliCacheCommand extends ConsoleCommand
     protected $opcacheManagement;
 
     /**
-     * ResetCacheCommand constructor.
+     * ResetOpcodeCliCacheCommand constructor.
      *
      * @param OpcacheManagement $opcacheManagement
      * @param OpcacheLibInterface $opcache
