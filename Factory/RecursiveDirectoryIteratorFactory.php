@@ -5,7 +5,7 @@
  * @package Glushko_OpcacheManagement
  */
 
-namespace Glushko\OpcacheManagement\Service\Filesystem;
+namespace Glushko\OpcacheManagement\Factory;
 
 use RecursiveDirectoryIterator;
 

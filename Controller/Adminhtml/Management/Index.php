@@ -12,6 +12,7 @@ use Magento\Backend\App\Action;
 use Magento\Backend\App\Action\Context as AppActionContext;
 use Magento\Framework\Controller\Result\Redirect as RedirectResult;
 use Magento\Framework\Controller\ResultFactory;
+use Magento\Framework\View\Result\Page as PageResult;
 
 /**
  * Class Index
@@ -54,6 +55,12 @@ class Index extends Action
             return $redirectResult;
         }
 
-        return $this->resultFactory->create(ResultFactory::TYPE_PAGE);
+        /** @var PageResult $pageResult */
+        $pageResult = $this->resultFactory->create(ResultFactory::TYPE_PAGE);
+
+        $pageResult->setActiveMenu('Glushko_OpcacheManagement::Opcache_management');
+        $pageResult->getConfig()->getTitle()->prepend(__('Opcache Management'));
+
+        return $pageResult;
     }
 }

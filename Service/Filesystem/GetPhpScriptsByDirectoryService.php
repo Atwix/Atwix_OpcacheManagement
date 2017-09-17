@@ -7,6 +7,8 @@
 
 namespace Glushko\OpcacheManagement\Service\Filesystem;
 
+use Glushko\OpcacheManagement\Factory\RecursiveDirectoryIteratorFactory;
+use Glushko\OpcacheManagement\Factory\RecursiveIteratorIteratorFactory;
 use RecursiveIteratorIterator;
 use SplFileInfo;
 
@@ -15,7 +17,6 @@ use SplFileInfo;
  */
 class GetPhpScriptsByDirectoryService
 {
-
     const FILE_EXTENSION_PHP = 'php';
 
     /**
