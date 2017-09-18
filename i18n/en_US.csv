@@ -39,3 +39,4 @@
 "Manual Restarts","Manual Restarts"
 "Opcache Management","Opcache Management"
 "Opcache is disabled. Please check your configurations","Opcache is disabled. Please check your configurations"
+"It checks the entire opcode cache. After pressing, all scripts will be checked and they will be invalidated if modification time is newer the cached one","It checks the entire opcode cache. After pressing, all scripts will be checked and they will be invalidated if modification time is newer the cached one"

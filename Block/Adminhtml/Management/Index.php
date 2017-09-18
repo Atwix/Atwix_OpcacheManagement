@@ -76,8 +76,9 @@ class Index extends BackendContainerWidget
             'checkCache',
             [
                 'label' => __('Check Cache'),
-                'title' => __('It resets the entire opcode cache. ' .
-                    'After pressing, all scripts will be reloaded and reparsed the next time they are hit.'),
+                'title' => __('It checks the entire opcode cache. ' .
+                    'After pressing, all scripts will be checked and they will be invalidated' .
+                    ' if modification time is newer the cached one'),
                 'onclick' => 'setLocation(\'' . $this->getCheckCacheUrl() . '\')',
                 'class' => 'primary',
             ],
