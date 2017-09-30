@@ -1,0 +1,30 @@
+<?php
+/**
+ * @author Roman Glushko
+ * @copyright Copyright (c) 2017 Roman Glushko (http://www.linkedin.com/in/glushko-roman/)
+ * @package Glushko_OpcacheManagement
+ */
+/** @var Glushko\OpcacheManagement\Block\Adminhtml\Management\Index\Tab\GeneralTab $block */
+?>
+
+<div class="fieldset-wrapper customer-information">
+    <div class="fieldset-wrapper-title">
+        <span class="title"><?php echo __('General Information'); ?></span>
+    </div>
+    <table class="admin__table-secondary">
+        <tbody>
+            <tr>
+                <th><strong><?php  echo __('Opcache Version'); ?></strong></th>
+                <td><?php echo $block->getOpcacheVersion(); ?></td>
+            </tr>
+            <tr>
+                <th><strong><?php  echo __('Uptime'); ?></strong></th>
+                <td><?php echo $block->getUptime(); ?></td>
+            </tr>
+            <tr>
+                <th><strong><?php  echo __('Last restart'); ?></strong></th>
+                <td><?php echo $block->getLastRestart(); ?></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

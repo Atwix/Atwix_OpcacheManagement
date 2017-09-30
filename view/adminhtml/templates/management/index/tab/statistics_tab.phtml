@@ -1,0 +1,42 @@
+<?php
+/**
+ * @author Roman Glushko
+ * @copyright Copyright (c) 2017 Roman Glushko (http://www.linkedin.com/in/glushko-roman/)
+ * @package Glushko_OpcacheManagement
+ */
+/** @var Glushko\OpcacheManagement\Block\Adminhtml\Management\Index\Tab\StatisticsTab $block */
+?>
+
+<div class="fieldset-wrapper customer-information">
+    <div class="fieldset-wrapper-title">
+        <span class="title"><?php echo __('Statistics'); ?></span>
+    </div>
+    <table class="admin__table-secondary">
+        <tbody>
+            <tr>
+                <th><strong><?php  echo __('Num Cached Scripts'); ?></strong></th>
+                <td><?php echo $block->getNumberCachedScripts(); ?></td>
+            </tr>
+            <tr>
+                <th><strong><?php  echo __('Num Cached Keys'); ?></strong></th>
+                <td><?php echo $block->getNumberCachedKeys(); ?></td>
+            </tr>
+            <tr>
+                <th><strong><?php  echo __('Max Cached Keys'); ?></strong></th>
+                <td><?php echo $block->getMaxCachedKeys(); ?></td>
+            </tr>
+            <tr>
+                <th><strong><?php  echo __('Hits'); ?></strong></th>
+                <td><?php echo $block->getHits(); ?></td>
+            </tr>
+            <tr>
+                <th><strong><?php  echo __('OOM Restarts'); ?></strong></th>
+                <td><?php echo $block->getOomRestarts(); ?></td>
+            </tr>
+            <tr>
+                <th><strong><?php  echo __('Manual Restarts'); ?></strong></th>
+                <td><?php echo $block->getManualRestarts(); ?></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
