@@ -85,8 +85,11 @@ class CompileAll extends Action
 
                 /** @var string $scriptPath */
                 foreach ($scriptsToCompile as $scriptPath) {
-                    $this->opcacheManagement->compileScript($scriptPath);
-                    $countOfCompiledScripts++;
+                    try {
+                        $this->opcacheManagement->compileScript($scriptPath);
+                        $countOfCompiledScripts++;
+                    } catch (\Exception $ex) {
+                    }
                 }
             }
 
