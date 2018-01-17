@@ -23,6 +23,7 @@ class FilterScriptsToCompileService
         '/Install/',
         'Magento/Framework/Message/Success.php',
         'Atwix/OpcacheManagement/Controller/Adminhtml/Management/CompileAll.php',
+        'atwix/opcache-management/Controller/Adminhtml/Management/CompileAll.php'
     ];
 
     /**
