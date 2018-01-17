@@ -1,14 +1,14 @@
 <?php
 /**
- * @author Roman Glushko
- * @copyright Copyright (c) 2017 Roman Glushko (http://www.linkedin.com/in/glushko-roman/)
- * @package Glushko_OpcacheManagement
+ * @author Atwix
+ * @copyright Copyright (c) 2018 Atwix (https://www.atwix.com/)
+ * @package Atwix_OpcacheManagement
  */
 
-namespace Glushko\OpcacheManagement\Mapper\Opcache;
+namespace Atwix\OpcacheManagement\Mapper\Opcache;
 
-use Glushko\OpcacheManagement\Data\Opcache\OpcacheStatusData;
-use Glushko\OpcacheManagement\Data\Opcache\OpcacheStatusDataFactory;
+use Atwix\OpcacheManagement\Data\Opcache\OpcacheStatusData;
+use Atwix\OpcacheManagement\Data\Opcache\OpcacheStatusDataFactory;
 
 /**
  * Class ArrayToOpcacheStatusDataMapper

@@ -1,14 +1,14 @@
 <?php
 /**
- * @author Roman Glushko
- * @copyright Copyright (c) 2017 Roman Glushko (http://www.linkedin.com/in/glushko-roman/)
- * @package Glushko_OpcacheManagement
+ * @author Atwix
+ * @copyright Copyright (c) 2018 Atwix (https://www.atwix.com/)
+ * @package Atwix_OpcacheManagement
  */
 
-namespace Glushko\OpcacheManagement\Service\Filesystem;
+namespace Atwix\OpcacheManagement\Service\Filesystem;
 
-use Glushko\OpcacheManagement\Factory\RecursiveDirectoryIteratorFactory;
-use Glushko\OpcacheManagement\Factory\RecursiveIteratorIteratorFactory;
+use Atwix\OpcacheManagement\Factory\RecursiveDirectoryIteratorFactory;
+use Atwix\OpcacheManagement\Factory\RecursiveIteratorIteratorFactory;
 use RecursiveIteratorIterator;
 use SplFileInfo;
 

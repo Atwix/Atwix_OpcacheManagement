@@ -1,11 +1,11 @@
 <?php
 /**
- * @author Roman Glushko
- * @copyright Copyright (c) 2017 Roman Glushko (http://www.linkedin.com/in/glushko-roman/)
- * @package Glushko_OpcacheManagement
+ * @author Atwix
+ * @copyright Copyright (c) 2018 Atwix (https://www.atwix.com/)
+ * @package Atwix_OpcacheManagement
  */
 
-namespace Glushko\OpcacheManagement\Block\Adminhtml\Management;
+namespace Atwix\OpcacheManagement\Block\Adminhtml\Management;
 
 use Magento\Backend\Block\Widget\Container as BackendContainerWidget;
 
@@ -49,7 +49,7 @@ class Index extends BackendContainerWidget
         parent::_construct();
 
         $this->_controller = 'Adminhtml_Management';
-        $this->setContainerElementId('glushko_management_container');
+        $this->setContainerElementId('atwix_management_container');
     }
 
     /**

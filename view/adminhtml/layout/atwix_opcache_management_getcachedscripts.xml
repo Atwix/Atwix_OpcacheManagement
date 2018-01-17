@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author Atwix
+ * @copyright Copyright (c) 2018 Atwix (https://www.atwix.com/)
+ * @package Atwix_OpcacheManagement
+ */
+-->
+<layout xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/layout_generic.xsd">
+    <container name="root" label="Root">
+        <block class="Atwix\OpcacheManagement\Block\Adminhtml\Management\Index\Tab\CachedScripts\CachedScriptsGrid"
+               name="atwix.opcache_management.tab.cached_scripts.grid" />
+    </container>
+</layout>

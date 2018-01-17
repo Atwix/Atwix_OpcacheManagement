@@ -1,13 +1,13 @@
 <?php
 /**
- * @author Roman Glushko
- * @copyright Copyright (c) 2017 Roman Glushko (http://www.linkedin.com/in/glushko-roman/)
- * @package Glushko_OpcacheManagement
+ * @author Atwix
+ * @copyright Copyright (c) 2018 Atwix (https://www.atwix.com/)
+ * @package Atwix_OpcacheManagement
  */
 
-namespace Glushko\OpcacheManagement\Controller\Adminhtml\Management;
+namespace Atwix\OpcacheManagement\Controller\Adminhtml\Management;
 
-use Glushko\OpcacheManagement\Lib\OpcacheLibInterface;
+use Atwix\OpcacheManagement\Lib\OpcacheLibInterface;
 use Magento\Backend\App\Action;
 use Magento\Backend\App\Action\Context as AppActionContext;
 use Magento\Framework\Controller\Result\Redirect as RedirectResult;
@@ -58,7 +58,7 @@ class Index extends Action
         /** @var PageResult $pageResult */
         $pageResult = $this->resultFactory->create(ResultFactory::TYPE_PAGE);
 
-        $pageResult->setActiveMenu('Glushko_OpcacheManagement::Opcache_management');
+        $pageResult->setActiveMenu('Atwix_OpcacheManagement::Opcache_management');
         $pageResult->getConfig()->getTitle()->prepend(__('Opcache Management'));
 
         return $pageResult;

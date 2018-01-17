@@ -1,9 +1,9 @@
 {
-    "name": "glushko/opcache-management",
+    "name": "atwix/opcache-management",
     "description": "N/A",
     "require": {
         "php": "~5.6.5|7.0.2|7.0.4|~7.0.6",
-        "magento/framework": "100.1.*"
+        "magento/framework": "2.*"
     },
     "type": "magento2-module",
     "version": "1.0.0",
@@ -16,7 +16,7 @@
             "registration.php"
         ],
         "psr-4": {
-            "Glushko\\OpcacheManagement\\": ""
+            "Atwix\\OpcacheManagement\\": ""
         }
     }
 }

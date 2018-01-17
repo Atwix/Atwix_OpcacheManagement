@@ -1,18 +1,18 @@
 <?php
 /**
- * @author Roman Glushko
- * @copyright Copyright (c) 2017 Roman Glushko (http://www.linkedin.com/in/glushko-roman/)
- * @package Glushko_OpcacheManagement
+ * @author Atwix
+ * @copyright Copyright (c) 2018 Atwix (https://www.atwix.com/)
+ * @package Atwix_OpcacheManagement
  */
 
-namespace Glushko\OpcacheManagement\Block\Adminhtml\Management\Index\Tab;
+namespace Atwix\OpcacheManagement\Block\Adminhtml\Management\Index\Tab;
 
 use DateTime;
-use Glushko\OpcacheManagement\Data\Opcache\OpcacheStatisticsData;
-use Glushko\OpcacheManagement\Factory\DateTimeFactory;
-use Glushko\OpcacheManagement\Service\Format\SinceTimeFormatter;
-use Glushko\OpcacheManagement\Service\Opcache\Information\GetOpcacheStatisticsService;
-use Glushko\OpcacheManagement\Service\Opcache\Information\GetOpcacheVersionService;
+use Atwix\OpcacheManagement\Data\Opcache\OpcacheStatisticsData;
+use Atwix\OpcacheManagement\Factory\DateTimeFactory;
+use Atwix\OpcacheManagement\Service\Format\SinceTimeFormatter;
+use Atwix\OpcacheManagement\Service\Opcache\Information\GetOpcacheStatisticsService;
+use Atwix\OpcacheManagement\Service\Opcache\Information\GetOpcacheVersionService;
 use Magento\Backend\Block\Template as BackendTemplate;
 use Magento\Backend\Block\Template\Context as BackendTemplateContext;
 use Magento\Backend\Block\Widget\Tab\TabInterface as TabWidgetInterface;
@@ -27,7 +27,7 @@ class GeneralTab extends BackendTemplate implements TabWidgetInterface
      *
      * @var string
      */
-    protected $_template = 'Glushko_OpcacheManagement::management/index/tab/general_tab.phtml';
+    protected $_template = 'Atwix_OpcacheManagement::management/index/tab/general_tab.phtml';
 
     /**
      * @var DateTimeFactory

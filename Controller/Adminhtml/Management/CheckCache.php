@@ -1,14 +1,14 @@
 <?php
 /**
- * @author Roman Glushko
- * @copyright Copyright (c) 2017 Roman Glushko (http://www.linkedin.com/in/glushko-roman/)
- * @package Glushko_OpcacheManagement
+ * @author Atwix
+ * @copyright Copyright (c) 2018 Atwix (https://www.atwix.com/)
+ * @package Atwix_OpcacheManagement
  */
 
-namespace Glushko\OpcacheManagement\Controller\Adminhtml\Management;
+namespace Atwix\OpcacheManagement\Controller\Adminhtml\Management;
 
-use Glushko\OpcacheManagement\Lib\OpcacheLibInterface;
-use Glushko\OpcacheManagement\Service\Opcache\Management\OpcacheManagement;
+use Atwix\OpcacheManagement\Lib\OpcacheLibInterface;
+use Atwix\OpcacheManagement\Service\Opcache\Management\OpcacheManagement;
 use Magento\Backend\App\Action;
 use Magento\Backend\App\Action\Context as BackendActionContext;
 use Magento\Framework\Controller\Result\Redirect as RedirectResult;

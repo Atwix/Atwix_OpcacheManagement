@@ -1,20 +1,20 @@
 <?xml version="1.0"?>
 <!--
 /**
- * @author Roman Glushko
- * @copyright Copyright (c) 2017 Roman Glushko (http://www.linkedin.com/in/glushko-roman/)
- * @package Glushko_OpcacheManagement
+ * @author Atwix
+ * @copyright Copyright (c) 2018 Atwix (https://www.atwix.com/)
+ * @package Atwix_OpcacheManagement
  */
 -->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
     <menu>
-        <add id="Glushko_OpcacheManagement::Opcache_management"
+        <add id="Atwix_OpcacheManagement::Opcache_management"
              title="Opcache Management"
              translate="title"
-             module="Glushko_OpcacheManagement"
+             module="Atwix_OpcacheManagement"
              sortOrder="30"
              parent="Magento_Backend::system_tools"
-             action="glushko_opcache/management/index"
-             resource="Glushko_OpcacheManagement::index" />
+             action="atwix_opcache/management/index"
+             resource="Atwix_OpcacheManagement::index" />
     </menu>
 </config>

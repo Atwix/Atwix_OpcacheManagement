@@ -1,11 +1,11 @@
 <?php
 /**
- * @author Roman Glushko
- * @copyright Copyright (c) 2017 Roman Glushko (http://www.linkedin.com/in/glushko-roman/)
- * @package Glushko_OpcacheManagement
+ * @author Atwix
+ * @copyright Copyright (c) 2018 Atwix (https://www.atwix.com/)
+ * @package Atwix_OpcacheManagement
  */
 
-namespace Glushko\OpcacheManagement\Service\Opcache\Management\Compilation;
+namespace Atwix\OpcacheManagement\Service\Opcache\Management\Compilation;
 
 /**
  * Class FilterScriptsToCompileService
@@ -22,7 +22,7 @@ class FilterScriptsToCompileService
         '/Test/',
         '/Install/',
         'Magento/Framework/Message/Success.php',
-        'Glushko/OpcacheManagement/Controller/Adminhtml/Management/CompileAll.php',
+        'Atwix/OpcacheManagement/Controller/Adminhtml/Management/CompileAll.php',
     ];
 
     /**

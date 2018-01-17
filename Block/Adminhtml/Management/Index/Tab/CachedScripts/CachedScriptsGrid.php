@@ -1,15 +1,15 @@
 <?php
 /**
- * @author Roman Glushko
- * @copyright Copyright (c) 2017 Roman Glushko (http://www.linkedin.com/in/glushko-roman/)
- * @package Glushko_OpcacheManagement
+ * @author Atwix
+ * @copyright Copyright (c) 2018 Atwix (https://www.atwix.com/)
+ * @package Atwix_OpcacheManagement
  */
 
-namespace Glushko\OpcacheManagement\Block\Adminhtml\Management\Index\Tab\CachedScripts;
+namespace Atwix\OpcacheManagement\Block\Adminhtml\Management\Index\Tab\CachedScripts;
 
-use Glushko\OpcacheManagement\Block\Adminhtml\Management\Index\Tab\CachedScripts\Grid\CachedScriptsActionRenderer;
-use Glushko\OpcacheManagement\Model\ResourceModel\CachedScripts\CachedScriptsCollection;
-use Glushko\OpcacheManagement\Model\ResourceModel\CachedScripts\CachedScriptsCollectionFactory;
+use Atwix\OpcacheManagement\Block\Adminhtml\Management\Index\Tab\CachedScripts\Grid\CachedScriptsActionRenderer;
+use Atwix\OpcacheManagement\Model\ResourceModel\CachedScripts\CachedScriptsCollection;
+use Atwix\OpcacheManagement\Model\ResourceModel\CachedScripts\CachedScriptsCollectionFactory;
 use Magento\Backend\Block\Template\Context as BackendBlockContext;
 use Magento\Backend\Block\Widget\Grid\Extended as ExtendedGridWidget;
 use Magento\Backend\Helper\Data as BackendDataHelper;

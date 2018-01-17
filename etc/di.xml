@@ -1,18 +1,18 @@
 <?xml version="1.0"?>
 <!--
 /**
- * @author Roman Glushko
- * @copyright Copyright (c) 2017 Roman Glushko (http://www.linkedin.com/in/glushko-roman/)
- * @package Glushko_OpcacheManagement
+ * @author Atwix
+ * @copyright Copyright (c) 2018 Atwix (https://www.atwix.com/)
+ * @package Atwix_OpcacheManagement
  */
 -->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
-    <preference for="Glushko\OpcacheManagement\Lib\OpcacheLibInterface"
-                type="Glushko\OpcacheManagement\Lib\OpcacheLib" />
+    <preference for="Atwix\OpcacheManagement\Lib\OpcacheLibInterface"
+                type="Atwix\OpcacheManagement\Lib\OpcacheLib" />
     <type name="Magento\Framework\Console\CommandListInterface">
         <arguments>
             <argument name="commands" xsi:type="array">
-                <item name="glushkoResetOpcodeCliCacheCommand" xsi:type="object">Glushko\OpcacheManagement\Console\ResetOpcodeCliCacheCommand</item>
+                <item name="atwixResetOpcodeCliCacheCommand" xsi:type="object">Atwix\OpcacheManagement\Console\ResetOpcodeCliCacheCommand</item>
             </argument>
         </arguments>
     </type>

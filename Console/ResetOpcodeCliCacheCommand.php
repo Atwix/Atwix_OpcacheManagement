@@ -1,14 +1,14 @@
 <?php
 /**
- * @author Roman Glushko
- * @copyright Copyright (c) 2017 Roman Glushko (http://www.linkedin.com/in/glushko-roman/)
- * @package Glushko_OpcacheManagement
+ * @author Atwix
+ * @copyright Copyright (c) 2018 Atwix (https://www.atwix.com/)
+ * @package Atwix_OpcacheManagement
  */
 
-namespace Glushko\OpcacheManagement\Console;
+namespace Atwix\OpcacheManagement\Console;
 
-use Glushko\OpcacheManagement\Lib\OpcacheLibInterface;
-use Glushko\OpcacheManagement\Service\Opcache\Management\OpcacheManagement;
+use Atwix\OpcacheManagement\Lib\OpcacheLibInterface;
+use Atwix\OpcacheManagement\Service\Opcache\Management\OpcacheManagement;
 use Symfony\Component\Console\Command\Command as ConsoleCommand;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -51,7 +51,7 @@ class ResetOpcodeCliCacheCommand extends ConsoleCommand
     {
         parent::configure();
 
-        $this->setName('glushko_opcachemanagement:cache:reset');
+        $this->setName('atwix_opcacheManagement:cache:reset');
         $this->setDescription('All cached CLI scripts will be reloaded and reparsed the next time they are hit.');
     }
 

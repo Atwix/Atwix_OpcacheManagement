@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
 <!--
 /**
- * @author Roman Glushko
- * @copyright Copyright (c) 2017 Roman Glushko (http://www.linkedin.com/in/glushko-roman/)
- * @package Glushko_OpcacheManagement
+ * @author Atwix
+ * @copyright Copyright (c) 2018 Atwix (https://www.atwix.com/)
+ * @package Atwix_OpcacheManagement
  */
 -->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
-    <module name="Glushko_OpcacheManagement" setup_version="1.0.0">
+    <module name="Atwix_OpcacheManagement" setup_version="1.0.0">
     </module>
 </config>

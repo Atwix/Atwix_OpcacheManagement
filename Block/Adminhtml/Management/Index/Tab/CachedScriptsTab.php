@@ -1,11 +1,11 @@
 <?php
 /**
- * @author Roman Glushko
- * @copyright Copyright (c) 2017 Roman Glushko (http://www.linkedin.com/in/glushko-roman/)
- * @package Glushko_OpcacheManagement
+ * @author Atwix
+ * @copyright Copyright (c) 2018 Atwix (https://www.atwix.com/)
+ * @package Atwix_OpcacheManagement
  */
 
-namespace Glushko\OpcacheManagement\Block\Adminhtml\Management\Index\Tab;
+namespace Atwix\OpcacheManagement\Block\Adminhtml\Management\Index\Tab;
 
 use Magento\Backend\Block\Template as BackendTemplate;
 use Magento\Backend\Block\Widget\Tab\TabInterface as TabWidgetInterface;
@@ -20,7 +20,7 @@ class CachedScriptsTab extends BackendTemplate implements TabWidgetInterface
      *
      * @var string
      */
-    protected $_template = 'Glushko_OpcacheManagement::management/index/tab/cached_scripts_tab.phtml';
+    protected $_template = 'Atwix_OpcacheManagement::management/index/tab/cached_scripts_tab.phtml';
 
     /**
      * @inheritdoc
