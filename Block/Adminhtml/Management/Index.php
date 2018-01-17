@@ -84,7 +84,7 @@ class Index extends BackendContainerWidget
             ],
             2
         );
-        $this->addButton(
+        /*$this->addButton(
             'compileAll',
             [
                 'label' => __('Compile All Scripts'),
@@ -93,7 +93,7 @@ class Index extends BackendContainerWidget
                 'class' => 'primary',
             ],
             3
-        );
+        );*/
 
         return parent::_prepareLayout();
     }
